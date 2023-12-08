@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Load SVG sprite -->
+    <script src="js/svg-include.js"></script>
+    <title>Interfax Press Center Moscow</title>
+</head>
+<body>
+
+<!-- Insert SVG sprite -->
+<div id="svg-include">
+  <script>
+    document.getElementById('svg-include').innerHTML = svgString;
+  </script>
+</div>
+
+<header>
+  <!-- ******** -->
+  <!-- Top menu -->
+  <div class="container-fluid bg-primary d-none d-md-block px-0">
+    <div class="container container-navbar-top  d-flex align-items-center justify-content-between"> <!-- container-lg-auto -->
+      <ul class="nav nav-top">
+        <li class="nav-item">
+          <a class="nav-link pl-0" href="#">Interfax.ru</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Туризм</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Недвижимость</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">СКАН</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">СПАРК</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">СПАРК-Маркетинг</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Образование</a>
+        </li>
+        <li class="nav-item d-none d-xl-block">
+          <a class="nav-link" href="#">Военные новости</a>
+        </li>
+        <li class="nav-item d-none d-xl-block">
+          <a class="nav-link" href="#">Interfax.com</a>
+        </li>
+        <li class="nav-item dropdown dropdown-nav-top d-xl-none" data-hover="dropdown">
+          <a class="nav-link" href="#" >Еще</a>
+          <div class="dropdown-menu bg-primary rounded-0 border-0">
+            <a class="dropdown-item" href="#">Военные новости</a>
+            <a class="dropdown-item" href="#">Interfax.com</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="nav nav-social d-none d-lg-flex">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><svg style="fill:none" width="30" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-fb"></use></svg></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><svg style="fill:none" width="30" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-vk"></use></svg></a></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><svg style="fill:none" width="30" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use></svg></a></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pr-0" href="#"><svg style="fill:none" width="30" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-rss"></use></svg></a></a>
+        </li>
+      </ul>
+    </div> <!-- container -->
+  </div> <!-- /container-fluid -->
+  <!-- /Top menu end-->
+
+  <!-- Main menu -->
+  <div class="container-fluid navbar-container d-none d-lg-block px-0" id="main-menu">
+    <div class="container">
+      <nav class="navbar p-0">
+        <a class="navbar-brand" href="pages-list.html"></a>
+        <div>
+          <!-- Regions menu 1280-->
+          <ul class="navbar-nav nav-regions flex-row d-none d-xl-flex">
+            <li class="nav-item">
+              <a class="nav-link pl-0" href="region.html">Москва</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="region.html">Центр</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="region.html">Северо-Запад</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="region.html">Юг и Северный Кавказ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="region.html">Поволжье</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="region.html">Урал</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="region.html">Сибирь</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="region.html">Дальний Восток</a>
+            </li>
+          </ul>
+          <!-- /Regions menu 1280 end-->
+
+          <!-- Regions menu 1024-->
+          <div class="nav-regions-dropdown d-flex d-xl-none"> 
+            <ul class="navbar-nav flex-row align-items-center position-relative">
+              <li>
+                <div class="btn-group btn-group-regions">
+                  <a class="btn region-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="selected">Все регионы</span>
+                    <span class="arrow">
+                      <svg style="fill:none" width="15" height="9"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-group-arrow-blue"></use></svg>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-regions">
+                    <a class="dropdown-item active" href="region.html">Все регионы</a>
+                    <a class="dropdown-item" href="region.html">Москва</a>
+                    <a class="dropdown-item" href="region.html">Центр</a>
+                    <a class="dropdown-item" href="region.html">Северо-Запад</a>
+                    <a class="dropdown-item" href="region.html">Юг и Северный Кавказ</a>
+                    <a class="dropdown-item" href="region.html">Поволжье</a>
+                    <a class="dropdown-item" href="region.html">Урал</a>
+                    <a class="dropdown-item" href="region.html">Сибирь</a>
+                    <a class="dropdown-item" href="region.html">Дальний Восток</a>
+                  </div>
+                </div>
+              </li>
+              <li class="btn-nav-search-wrap">
+                <a class="d-block btn-nav-search border-left-0" href="#" data-event="showSearchField" data-target="#region-menu-search">
+                  <svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find"></use></svg>
+                </a>
+              </li>
+              <li class="">
+                <!-- Search field -->
+                <div class="input-menu-search input-menu-search-md" id="region-menu-search">
+                  <form>
+                    <div class="input-group input-group-search">
+                      <input type="text" class="form-control" placeholder="Поиск" aria-label="Поиск">
+                      <a class="btn-close"><svg style="fill:none" width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close-gray"></use></svg></a>
+                      <div class="input-group-append d-none d-md-flex">
+                        <a class="btn" type="submit" id="button-addon2" ><svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find-white"></use></svg></a>
+                      </div>
+                    </div> <!-- /input-group -->
+                  </form>
+                </div>
+                <!-- /Search end-->
+              </li>
+            </ul>
+            <a class="nav-link pr-0 btn-green text-nowrap" href="#">Вход для подписчиков</a>
+          </div> <!-- /nav-regions-dropdown -->
+          <!-- /Regions menu 1024 end-->
+  
+          <!-- Sections menu-->
+          <div class="d-flex align-items-center">
+            <ul class="navbar-nav nav-sections">
+              <li class="nav-item">
+                <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="all-news.html">Новости</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="press-center.html">Пресс-центр</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pr-0" href="all-photoreports.html">Фоторепортажи</a>
+              </li>
+              <li class="d-none d-xl-flex">
+                <a class="d-block btn-nav-search" href="#" data-event="showSearchField" data-target="#section-menu-search">
+                  <svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find"></use>
+                  </svg>
+                  </a>
+              </li>
+              <li>
+                <!-- Search field -->
+                <div class="input-menu-search" id="section-menu-search">
+                  <form>
+                    <div class="input-group input-group-search">
+                      <input type="text" class="form-control" placeholder="Поиск" aria-label="Поиск">
+                      <a class="btn-close"><svg style="fill:none" width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close-gray"></use></svg></a>
+                      <div class="input-group-append d-none d-md-flex">
+                        <a class="btn" type="submit" id="button-addon2" ><svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find-white"></use></svg></a>
+                      </div>
+                    </div> <!-- /input-group -->
+                  </form>
+                </div>
+                <!-- /Search end-->
+              </li>
+            </ul>
+            <ul class="navbar-nav flex-row ml-20 align-items-center d-none d-xl-flex">
+              <li class="">
+                <a class="nav-link pr-0 btn-green" href="#">Вход для подписчиков</a>
+              </li>
+            </ul>
+          </div>
+          <!-- /Sections menu end-->
+        </div>
+      </nav>
+    </div> <!-- /container -->
+  </div> <!-- /container-fluid -->
+
+  <!-- Main menu bottom marker. Use for scroll menu animation -->
+  <span id="main-menu-marker"></span>
+  <!-- /Main menu end -->
+
+  <!-- Scroll and mobile menu -->
+  <div class="scroll-menu" id="scroll-menu">
+    <div class="container-fluid container-navbar-scroll px-0">
+      <div class="container">
+        <nav class="navbar navbar-scroll">
+          <div class="d-flex align-items-center">
+            <a class="navbar-brand navbar-brand-scroll" href="pages-list.html"></a>
+          </div>
+          <div class="navbar-scroll-body">
+            <a class="region-selected-text d-none d-md-block" data-toggle="collapse" data-target="#navbarScroll" aria-expanded="false">
+              <span class="">Все регионы</span>
+              <svg style="fill:none" width="15" height="9"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-group-arrow-blue"></use></svg>
+            </a>
+            <div class="d-flex align-items-center justify-content-end ml-auto">
+              <a class="d-block btn-nav-search border-left-0" data-event="showSearchField" data-target="#scroll-menu-search">
+                <svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find"></use></svg>
+              </a>
+            </div>
+            <!-- Search field -->
+            <div class="input-menu-search input-menu-search-sm" id="scroll-menu-search">
+              <form>
+                <div class="input-group input-group-search">
+                  <input type="text" class="form-control" placeholder="Поиск" aria-label="Поиск">
+                  <a class="btn-close"><svg style="fill:none" width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close-gray"></use></svg></a>
+                  <div class="input-group-append">
+                    <a class="btn" type="submit" id="button-addon2" ><svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find-white"></use></svg></a>
+                  </div>
+                </div> <!-- /input-group -->
+              </form>
+            </div>
+            <!-- /Search end-->
+          </div>
+          <a class="navbar-toggler ml-20" data-toggle="collapse" data-target="#navbarScroll" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+          </a>
+        </nav>
+      </div> <!-- /container -->
+    </div> <!-- /container-fluid -->
+
+    <div class="container-fluid container-navbar-scroll-menu px-0">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="navbarScroll">
+
+          <!-- For 768 + -->
+          <div class="row mt-20 mt-md-30 d-none d-md-flex">
+            <div class="col-sm-12 col-md-6 col-lg-4 border-right border-light mb-40">
+              <ul class="navbar-nav nav-scroll-regions" id="toggle-regions">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#" data-toggle="#toggle-section-all-regions">Все регионы</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="region.html" data-toggle="#toggle-section-moscow">Москва</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="region.html" data-toggle="#toggle-section-center">Центр</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="region.html" data-toggle="#toggle-section-nord">Северо-Запад</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="region.html" data-toggle="#toggle-section-south">Юг и Северный Кавказ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="region.html" data-toggle="#toggle-section-volga">Поволжье</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="region.html" data-toggle="#toggle-section-ural">Урал</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="region.html" data-toggle="#toggle-section-siber">Сибирь</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="region.html" data-toggle="#toggle-section-east">Дальний Восток</a>
+                </li>
+              </ul>
+            </div> <!-- /col -->
+
+            <div class="col-sm-12 col-md-6 col-lg-4 border-right border-light border-md-0 mb-40" id="toggle-sections">
+                <!-- Section for All-regions -->
+                <ul class="navbar-nav nav-scroll-sections active" id="toggle-section-all-regions">
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-news.html">Новости</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="report.html">Репортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-photoreports.html">Фоторепортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Модернизация образования</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Россия и Мир</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Пресс-релизы</a>
+                  </li>
+                </ul>
+                <!-- Section for Moscow -->
+                <ul class="navbar-nav nav-scroll-sections" id="toggle-section-moscow">
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-news.html">Новости</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="report.html">Репортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-photoreports.html">Фоторепортажи</a>
+                  </li>
+                  <li>
+                    <a class="nav-link pr-0" href="#">Пресс-релизы</a>
+                  </li>
+                </ul>
+                <!-- Section for Center -->
+                <ul class="navbar-nav nav-scroll-sections" id="toggle-section-center">
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-news.html">Новости</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="report.html">Репортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-photoreports.html">Фоторепортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Модернизация образования</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Россия и Мир</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Пресс-релизы</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link pr-0" href="#"> Аналитика</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Комментарии</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Прогнозы</a>
+                  </li>
+                </ul>
+                <!-- Section for Nord -->
+                <ul class="navbar-nav nav-scroll-sections" id="toggle-section-nord">
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-news.html">Новости</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="report.html">Репортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-photoreports.html">Фоторепортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Модернизация образования</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Россия и Мир</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Пресс-релизы</a>
+                  </li>
+                </ul>
+                <!-- Section for South -->
+                <ul class="navbar-nav nav-scroll-sections" id="toggle-section-south">
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-news.html">Новости</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="report.html">Репортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-photoreports.html">Фоторепортажи</a>
+                  </li>
+                  <li>
+                    <a class="nav-link pr-0" href="#">Пресс-релизы</a>
+                  </li>
+                </ul>
+                <!-- Section for Volga -->
+                <ul class="navbar-nav nav-scroll-sections" id="toggle-section-volga">
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-news.html">Новости</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="report.html">Репортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-photoreports.html">Фоторепортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Модернизация образования</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Россия и Мир</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Пресс-релизы</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link pr-0" href="#"> Аналитика</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Комментарии</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Прогнозы</a>
+                  </li>
+                </ul>
+                <!-- Section for Ural -->
+                <ul class="navbar-nav nav-scroll-sections" id="toggle-section-ural">
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-news.html">Новости</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="report.html">Репортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-photoreports.html">Фоторепортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Модернизация образования</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Россия и Мир</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Пресс-релизы</a>
+                  </li>
+                </ul>
+                <!-- Section for Siber -->
+                <ul class="navbar-nav nav-scroll-sections" id="toggle-section-siber">
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-news.html">Новости</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="report.html">Репортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-photoreports.html">Фоторепортажи</a>
+                  </li>
+                  <li>
+                    <a class="nav-link pr-0" href="#">Пресс-релизы</a>
+                  </li>
+                </ul>
+                <!-- Section for East -->
+                <ul class="navbar-nav nav-scroll-sections" id="toggle-section-east">
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-news.html">Новости</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="report.html">Репортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="all-photoreports.html">Фоторепортажи</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Модернизация образования</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Россия и Мир</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Пресс-релизы</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link pr-0" href="#"> Аналитика</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Комментарии</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link pr-0" href="#">Прогнозы</a>
+                  </li>
+                </ul>
+            </div> <!-- /col -->
+
+            <div class="col-sm-12 col-md-12 col-lg-4">
+              <ul class="navbar-nav nav-scroll-contacts">
+                <li class="nav-btn">
+                  <a class="nav-link btn-green-border d-none d-md-inline-block mb-30 px-20" href="#">Вход для подписчиков
+                    <svg class="ml-10" style="fill:none" width="11" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-green"></use></svg>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Об &laquo;Интерфаксе&raquo;</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="subscribe.html">Подписка</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contacts.html">Контакты</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="press-center.html">Пресс-центры</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="advert.html">Реклама на сайте</a>
+                </li>
+              </ul>
+            </div> <!-- /col -->
+          </div> <!-- /row -->
+
+          <!-- For 375 -->
+          <div class="row mt-20 mt-md-30 d-block d-md-none">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <a class="nav-link btn-green-border d-block d-md-none text-center mb-20 py-0 border-0" href="#">Вход для подписчиков
+                <svg class="ml-10" style="fill:none" width="11" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-green"></use></svg>
+              </a>
+              <ul class="accordion navbar-nav nav-scroll-regions" id="nav-regions">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#collapse-section-all-regions" data-toggle="collapse" aria-expanded="true">Все регионы</a>
+                  <div class="collapse show" id="collapse-section-all-regions" data-parent="#nav-regions">
+                    <ul class="navbar-nav nav-scroll-sections">
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-news.html">Новости</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="report.html">Репортажи</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-photoreports.html">Фоторепортажи</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pr-0" href="#">Модернизация образования</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pr-0" href="#">Россия и Мир</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pr-0" href="#">Пресс-релизы</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#collapse-section-moscow" data-toggle="collapse" aria-expanded="false">Москва</a>
+                  <div class="collapse" id="collapse-section-moscow" data-parent="#nav-regions">
+                    <ul class="navbar-nav nav-scroll-sections">
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-news.html">Новости</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="report.html">Репортажи</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-photoreports.html">Фоторепортажи</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pr-0" href="#">Пресс-релизы</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#collapse-section-center" data-toggle="collapse" aria-expanded="false">Центр</a>
+                  <div class="collapse" id="collapse-section-center" data-parent="#nav-regions">
+                    <ul class="navbar-nav nav-scroll-sections">
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-news.html">Новости</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="report.html">Репортажи</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#collapse-section-nord-west" data-toggle="collapse" aria-expanded="false">Северо-Запад</a>
+                  <div class="collapse" id="collapse-section-nord-west" data-parent="#nav-regions">
+                    <ul class="navbar-nav nav-scroll-sections">
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-news.html">Новости</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="report.html">Репортажи</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#collapse-section-south" data-toggle="collapse" aria-expanded="false">Юг и Северный Кавказ</a>
+                  <div class="collapse" id="collapse-section-south" data-parent="#nav-regions">
+                    <ul class="navbar-nav nav-scroll-sections">
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-news.html">Новости</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="report.html">Репортажи</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#collapse-section-volga" data-toggle="collapse" aria-expanded="false">Поволжье</a>
+                  <div class="collapse" id="collapse-section-volga" data-parent="#nav-regions">
+                    <ul class="navbar-nav nav-scroll-sections">
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-news.html">Новости</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="report.html">Репортажи</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#collapse-section-ural" data-toggle="collapse" aria-expanded="false">Урал</a>
+                  <div class="collapse" id="collapse-section-ural" data-parent="#nav-regions">
+                    <ul class="navbar-nav nav-scroll-sections">
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-news.html">Новости</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="report.html">Репортажи</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#collapse-section-siber" data-toggle="collapse" aria-expanded="false">Сибирь</a>
+                  <div class="collapse" id="collapse-section-siber" data-parent="#nav-regions">
+                    <ul class="navbar-nav nav-scroll-sections">
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-news.html">Новости</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="report.html">Репортажи</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#collapse-section-east" data-toggle="collapse" aria-expanded="false">Дальний Восток</a>
+                  <div class="collapse" id="collapse-section-east" data-parent="#nav-regions">
+                    <ul class="navbar-nav nav-scroll-sections">
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="region.html">Весь регион</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-news.html">Новости</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="report.html">Репортажи</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div> <!-- /col -->
+            <div class="col-sm-12 col-md-12 col-lg-4">
+              <ul class="navbar-nav nav-scroll-contacts">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Об &laquo;Интерфаксе&raquo;</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="subscribe.html">Подписка</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contacts.html">Контакты</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="press-center.html">Пресс-центры</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="advert.html">Реклама на сайте</a>
+                </li>
+              </ul>
+            </div> <!-- /col -->
+          </div> <!-- /row -->
+        </div> <!-- /collapse -->
+      </div> <!-- /container -->
+    </div> <!-- /container-fluid -->
+  </div> <!-- /scroll-menu -->
+  <!-- /Scroll and mobile menu end -->
+</header>
+
+<!-- Content -->
+<div class="container mt-20 mt-md-40">
+  <div class="row">
+    <!-- Left and central column -->
+    <div class="col-md-12 col-lg-12 col-xl-9 mb-20 pr-xl-0 mt-20 mt-md-0">
+      <div class="row">
+        <!-- Left column -->
+        <div class="col-12 col-lg-4 pr-lg-0">
+          <!-- Header for desktop -->
+          <h4 class="h4-lg text-primary mb-15 d-none d-lg-block">Пресс-центры в России</h4>
+          <!-- Header for tablets -->
+          <h2 class="text-primary mb-20 d-none d-md-block d-lg-none">Пресс-центры в России</h2>
+          <!-- For desktop -->
+          <ul class="list-unstyled list-press-center d-none d-lg-block">
+            <li>
+              <a href="#" class="active">Москва</a>
+            </li>
+            <li>
+              <a href="#">Центр</a>
+              <ul class="list-unstyled">
+                <li><a href="#">Белгород</a></li>
+                <li><a href="#">Воронеж</a></li>
+                <li><a href="#">Калуга</a></li>
+                <li><a href="#">Ярославль</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Северо-запад</a>
+              <ul class="list-unstyled">
+                <li><a href="#">Санкт-Петербург</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Юг и Северный Кавказ</a>
+              <ul class="list-unstyled">
+                <li><a href="#">Краснодар</a></li>
+                <li><a href="#">Ростов-на-Дону</a></li>
+                <li><a href="#">Волгоград</a></li>
+                <li><a href="#">Поволжье</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Поволжье</a>
+              <ul class="list-unstyled">
+                <li><a href="#">Нижний Новгород</a></li>
+                <li><a href="#">Пермь</a></li>
+                <li><a href="#">Самара</a></li>
+                <li><a href="#">Уфа</a></li>
+                <li><a href="#">Урал</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Урал</a>
+              <ul class="list-unstyled">
+                <li><a href="#">Екатеринбург</a></li>
+                <li><a href="#">Тюмень</a></li>
+                <li><a href="#">Челябинск</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Сибирь</a>
+              <ul class="list-unstyled">
+                <li><a href="#">Барнаул</a></li>
+                <li><a href="#">Иркутск</a></li>
+                <li><a href="#">Кемерово</a></li>
+                <li><a href="#">Красноярск</a></li>
+                <li><a href="#">Новосибирск</a></li>
+              </ul>
+            </li>
+             <li>
+              <a href="#">Дальний Восток</a>
+              <ul class="list-unstyled">
+                <li><a href="#">Владивосток</a></li>
+                <li><a href="#">Хабаровск</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- /For desktop end-->
+          <!-- For tablets -->
+          <div class="btn-group btn-group-press mb-20 d-none d-md-block d-lg-none">
+            <a class="btn region-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+              <span class="text-truncate text-lg font-weight-bold">Центр</span>
+              <svg style="fill:none" width="15" height="9"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-group-arrow"></use></svg>
+            </a>
+            <div class="dropdown-menu dropdown-menu-press">
+              <ul class="list-unstyled list-press-center">
+                <li>
+                  <a href="#" class="active">Москва</a>
+                </li>
+                <li>
+                  <a href="#">Центр</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Белгород</a></li>
+                    <li><a href="#">Воронеж</a></li>
+                    <li><a href="#">Калуга</a></li>
+                    <li><a href="#">Ярославль</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Северо-запад</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Санкт-Петербург</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Юг и Северный Кавказ</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Краснодар</a></li>
+                    <li><a href="#">Ростов-на-Дону</a></li>
+                    <li><a href="#">Волгоград</a></li>
+                    <li><a href="#">Поволжье</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Поволжье</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Нижний Новгород</a></li>
+                    <li><a href="#">Пермь</a></li>
+                    <li><a href="#">Самара</a></li>
+                    <li><a href="#">Уфа</a></li>
+                    <li><a href="#">Урал</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Урал</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Екатеринбург</a></li>
+                    <li><a href="#">Тюмень</a></li>
+                    <li><a href="#">Челябинск</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Сибирь</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Барнаул</a></li>
+                    <li><a href="#">Иркутск</a></li>
+                    <li><a href="#">Кемерово</a></li>
+                    <li><a href="#">Красноярск</a></li>
+                    <li><a href="#">Новосибирск</a></li>
+                  </ul>
+                </li>
+                 <li>
+                  <a href="#">Дальний Восток</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Владивосток</a></li>
+                    <li><a href="#">Хабаровск</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div><!--  /btn-group-press -->
+          <!-- /For tablets end -->
+          <!-- For mobile -->
+          <div class="d-block d-md-none mb-20 border-bottom border-light">
+            <a class="btn d-flex align-items-center justify-content-between pl-0 mb-20" data-toggle="collapse" data-target="#press-centers" aria-expanded="false">
+              <span class="text-primary font-weight-bold text-uppercase">Пресс-центры в России</span>
+              <svg style="fill:none" width="15" height="9"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-group-arrow"></use></svg>
+            </a>
+            <div class="collapse" id="press-centers">
+              <ul class="list-unstyled list-press-center">
+                <li>
+                  <a href="#" class="active">Москва</a>
+                </li>
+                <li>
+                  <a href="#">Центр</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Белгород</a></li>
+                    <li><a href="#">Воронеж</a></li>
+                    <li><a href="#">Калуга</a></li>
+                    <li><a href="#">Ярославль</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Северо-запад</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Санкт-Петербург</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Юг и Северный Кавказ</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Краснодар</a></li>
+                    <li><a href="#">Ростов-на-Дону</a></li>
+                    <li><a href="#">Волгоград</a></li>
+                    <li><a href="#">Поволжье</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Поволжье</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Нижний Новгород</a></li>
+                    <li><a href="#">Пермь</a></li>
+                    <li><a href="#">Самара</a></li>
+                    <li><a href="#">Уфа</a></li>
+                    <li><a href="#">Урал</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Урал</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Екатеринбург</a></li>
+                    <li><a href="#">Тюмень</a></li>
+                    <li><a href="#">Челябинск</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Сибирь</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Барнаул</a></li>
+                    <li><a href="#">Иркутск</a></li>
+                    <li><a href="#">Кемерово</a></li>
+                    <li><a href="#">Красноярск</a></li>
+                    <li><a href="#">Новосибирск</a></li>
+                  </ul>
+                </li>
+                 <li>
+                  <a href="#">Дальний Восток</a>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Владивосток</a></li>
+                    <li><a href="#">Хабаровск</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div> <!-- /collapse -->
+          </div>
+          <!-- /For mobile end-->
+        </div> <!-- /col -->
+        <!-- /Left column end -->
+
+        <!-- Central column -->
+        <div class="col-12 col-lg-8 mt-0"> 
+          <h1 class="mb-20 d-block d-md-none d-lg-block">Москва</h1>
+
+          <p class="text-lg text-lighter">Информационное агентство "Интерфакс" предлагает услуги по подготовке, организации и проведению пресс-конференций, брифингов и презентаций в пресс-центре в Москве.</p>
+
+          <div class="bg-blue-light px-15 px-md-30 py-20 mb-20">
+            <h6 class="mb-30 line-height-md">По вопросам организации пресс-конференций обращайтесь в Управление по связям с общественностью</h6>
+            <p class="mb-5"><span class="text-gray d-block d-md-inline">Тел/факс: </span>+7 (499) 251-73-83</p>
+            <p class="mb-5"><span class="text-gray d-block d-md-inline">Аккредитация журналистов: </span>Тел: +7 (499) 223-66-99</p>
+            <p class="mb-5"><span class="text-gray d-block d-md-inline">На сайте: </span><a class="text-primary" href="www.interfax.ru/presscenter">www.interfax.ru/presscenter</a></p>
+          </div>
+
+          <!-- Carousel -->
+          <div id="carousel-press" class="carousel slide carousel-press mb-0 pb-40" data-interval="0" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-press" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-press" data-slide-to="1"></li>
+              <li data-target="#carousel-press" data-slide-to="2"></li>
+            </ol>
+            <!-- Photos -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/photo-carousel-press.png" class="d-block w-100" alt="photo">
+              </div>
+              <div class="carousel-item">
+                <img src="img/photo-carousel-press.png" class="d-block w-100" alt="photo">
+              </div>
+              <div class="carousel-item">
+                <img src="img/photo-carousel-press.png" class="d-block w-100" alt="photo">
+              </div>
+            </div> <!-- /carousel-inner -->
+            <!-- /Photos end -->
+
+            <div class="d-flex align-items-center justify-content-between mt-15">
+              <!-- Controls -->
+              <div class="d-flex carousel-controls">
+                <a class="carousel-control-prev" href="#carousel-press" role="button" data-slide="prev">
+                  <span class="prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-press" role="button" data-slide="next">
+                  <span class="next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div> 
+              <!-- /Controls end -->
+            </div>
+          </div>
+          <!-- /Carousel end -->
+
+          <div class="mb-20">
+            <p class="mb-5"><span class="text-gray d-block d-md-inline-block">Адрес: </span>г. Москва, ул. 1-ая Тверская-Ямская, д. 2, стр. 1</p>
+            <p class="mb-5"><span class="text-gray d-block d-md-inline-block">Открыто </span>1 января 1992 года</p>
+            <p class="mb-5"><span class="text-gray d-block d-md-inline-block">Количество мест в президиуме: </span>5-8 человек</p>
+            <p class="mb-5"><span class="text-gray d-block d-md-inline-block">Количество мест в зале: </span>до 100 человек</p>
+          </div>
+
+          <p>Пресс-центр центрального офиса "Интерфакса" - это самая посещаемая и самая престижная информационная площадка Москвы. В России, пожалуй, нет ньюсмейкера, который хотя бы раз не отвечал здесь на вопросы журналистов.</p>
+
+          <p>Ежегодно мы проводим более 200 брифингов и пресс-конференций с участием руководителей России и зарубежных государств, лидеров ведущих политических партий, известных деятелей науки и культуры, представителей российских и мировых бизнес-кругов.</p>
+
+          <p>Среди постоянных гостей нашего пресс-центра - журналисты ведущих российских, а также иностранных СМИ, имеющих аккредитацию на территории РФ.</p>
+
+          <p>Пресс-центр оснащен площадками для работы операторов телекамер, специальным освещением для видео- и фотосъемки, современными видео- и аудиосистемами, проекционным оборудованием, системой звукоусиления, а также доступом в интернет. В зале установлена система климат-контроля.</p>
+
+          <h6 class="mb-15">Стандартный пакет услуг по подготовке, организации и проведению пресс-конференций, брифингов и презентаций:</h6>
+          <ul class="pl-25 pl-md-30">
+            <li>Помощь в формулировании темы мероприятия;</li>
+            <li>Подготовка анонса;</li>
+            <li>Размещение анонса в информационных изданиях "Интерфакса";</li>
+            <li>Аккредитация прессы;</li>
+            <li>Аудиозапись;</li>
+            <li>Предоставление пресс-зала;</li>
+            <li>Профессиональное ведение мероприятий;</li>
+            <li>Подготовка репортажа по итогам пресс-конференции и его размещение в информационных изданиях "Интерфакса".</li>
+          </ul>
+
+          <h6 class="mb-15">Дополнительные услуги:</h6>
+          <ul class="pl-25 pl-md-30">
+            <li>Профессиональная фотосъемка;</li>
+            <li>Переводчик;</li>
+            <li>Организация фуршетов и кофе-брейков.</li>
+          </ul>
+        
+        </div> <!-- /col -->
+        <!-- /Central column end -->
+      </div> <!-- /row -->
+    </div> <!-- /col -->
+    <!-- /Left and central column end-->
+
+    <!-- Right column -->
+    <div class="d-none d-xl-block col-md-12 col-lg-12 col-xl-3">
+      <!-- Advert -->
+      <section class="mb-20 p-20 border border-light d-none d-lg-block">
+        <a href="#">
+          <img src="img/advert.png" class="img-fluid w-100" alt="advert">
+        </a>
+      </section>
+      <!-- /Advert end -->
+      <!-- News -->
+      <section class="mb-20">
+        <h4 class="text-primary mb-20"><a href="all-news.html" class="text-primary">Новости</a></h4>
+        <ul class="list-unstyled list-group lenta-news mb-10">
+          <li class="border-bottom border-light mb-15">
+            <a href="#" class="d-block mb-10">Конференция Парламентской ассоциации Северо-Запада РФ на Вологодчине в ноябре пройдет под знаком 25-летия ассоциации  </a>
+            <span class="news-datetime mb-20">8 июня 19:21</span>
+          </li>
+          <li class="border-bottom border-light mb-15">
+            <a href="#" class="d-block mb-10">Пожар на лакокрасочном заводе в Калининградской области локализован </a>
+            <span class="news-datetime mb-15">8 июня 16:01</span>
+          </li>
+          <li class="border-bottom border-light mb-15">
+            <a href="#" class="d-block mb-10">РЖД запустят летом туристический маршрут из Москвы в Карелию </a>
+            <span class="news-datetime mb-15">8 июня 13:26</span>
+          </li>
+          <li class="border-bottom border-light mb-15">
+            <a href="#" class="d-block mb-10">Сроки ввода 7-8 участков М-11 сохраняются, но есть проблемы с графиком работ - Акимов</a>
+            <span class="news-datetime mb-15">8 июня 10:21</span>
+          </li>
+          <li class="border-bottom border-light mb-15">
+            <a href="#" class="d-block mb-10">ФосАгро и Ленинградская область подписали соглашение о строительстве производства</a>
+            <span class="news-datetime mb-15">7 июня 10:21</span>
+          </li>
+        </ul>
+      <!-- /News end -->
+     
+    </div> <!-- /col -->
+    <!-- /Right column end-->
+  </div> <!-- /row -->
+</div> <!-- /container -->
+
+<footer>
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-start align-items-md-center border-bottom border-light py-30 mb-25">
+      <ul class="navbar-nav nav-footer flex-column flex-md-row">
+        <li class="nav-item">
+          <a class="nav-link pl-0" href="#">Об &laquo;Интерфаксе&raquo;</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pl-0 pl-md-10" href="subscribe.html">Подписка</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pl-0 pl-md-10" href="contacts.html">Контакты</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pl-0 pl-md-10" href="advert.html">Реклама на сайте</a>
+        </li>
+      </ul>
+      <ul class="nav nav-social">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><svg style="fill:none" width="30" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-fb-blue"></use></svg></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><svg style="fill:none" width="30" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-vk-blue"></use></svg></a></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><svg style="fill:none" width="30" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter-blue"></use></svg></a></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pr-0" href="#"><svg style="fill:none" width="30" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-rss-blue"></use></svg></a></a>
+        </li>
+      </ul>
+    </div>
+    <p class="text-sm text-muted">Сетевое издание “Интерфакс-Россия”. Свидетельство о регистрации СМИ ЭЛ № ФС 77 - 64321 выдано Федеральной службой по надзору в сфере связи, информационных технологий и массовых коммуникаций (Роскомнадзор) 25.12.2015.</p>
+    <p class="text-sm text-muted mb-15 mb-md-30">Вся информация, размещенная на данном веб-сайте, предназначена только для персонального пользования и не подлежит дальнейшему воспроизведению и/или распространению в какой-либо форме, иначе как с письменного разрешения "Интерфакса". Полные тексты сообщений агентства доступны подписчикам изданий &laquo;Интерфакса&raquo;.</p>
+    <ul class="navbar-nav nav-footer-rules">
+      <li class="nav-item d-block d-md-inline-block">
+        <a class="nav-link pl-0" href="#">Условия использования информации</a>
+      </li>
+      <li class="nav-item d-block d-md-inline-block">
+        <a class="nav-link" href="#">Запрещено для детей</a>
+      </li>
+      <li class="nav-item d-block d-md-inline-block">
+        <a class="nav-link" href="#">Политика обработки персональных данных</a>
+      </li>
+      <li class="nav-item d-block d-md-inline-block">
+        <a class="nav-link" href="#">Выходные данные</a>
+      </li>
+      <li class="nav-item nav-item-design d-block d-md-inline-block">
+        <a class="nav-link" href="http://motka.ru/">Дизайн – Motka.ru</a>
+      </li>
+    </ul>
+  </div> <!-- /container -->
+</footer>
+
+<!-- =================== Scripts ========================= -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/daterangepicker.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
