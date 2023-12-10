@@ -174,6 +174,31 @@ $(function(e) {
     $(this).parents(".input-menu-search").removeClass('active');
   });
 
+  // promo new dropdown
+  var promoNewDropdownTrigger = $('.promo-new-trigger')
+
+  if (promoNewDropdownTrigger) {
+    promoNewDropdownTrigger.each(function( index ) {
+        $(this).on('click', function(event) {
+            event.stopPropagation();
+    
+            if ($(this).hasClass('is--active')) {
+                $(this).removeClass('is--active')
+            } else {
+                $(this).addClass('is--active')
+            }
+        });
+    })
+
+	$(document).mouseup( function(e){
+        promoNewDropdownTrigger.each(function( index ) {
+            if ( !$(this).is(e.target) && $(this).has(e.target).length === 0 || $(this).children('.promo-new__dropdown').is(e.target) ) {
+                $(this).removeClass('is--active')
+            }
+        })
+	});
+  }
+
   // ====== DATERANGEPICKER Календарь =========
   var datepicker = $('input.daterange');
   if(datepicker.length > 0) {
