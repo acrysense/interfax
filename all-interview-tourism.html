@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
     <link rel="stylesheet" href="css/main.css">
+
     <!-- Load SVG sprite -->
     <script src="js/svg-include.js"></script>
-    <title>Interfax Index</title>
+    <title>Interfax All Main Events</title>
 </head>
-
 <body>
+
 <!-- Insert SVG sprite -->
 <div id="svg-include">
   <script>
@@ -67,7 +68,7 @@
           <a class="nav-link" href="#"><svg style="fill:none" width="30" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-vk"></use></svg></a></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><svg style="fill:none" width="30" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-dzen"></use></svg></a></a>
+          <a class="nav-link" href="#"><svg style="fill:none" width="30" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use></svg></a></a>
         </li>
         <li class="nav-item">
           <a class="nav-link pr-0" href="#"><svg style="fill:none" width="30" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-rss"></use></svg></a></a>
@@ -77,63 +78,37 @@
   </div> <!-- /container-fluid -->
   <!-- /Top menu end-->
 
-  <!-- banner -->
-  <div class="banner-hr banner-hr--indent">
-    <div class="container">
-      <a href="#" class="banner-hr__link">
-        <picture class="banner-hr__img">
-          <img src="img/banner-hr.jpg" alt="Image">
-        </picture>
-      </a>
-    </div>
-  </div>
-  <!-- end of banner -->
-
   <!-- Main menu -->
   <div class="container-fluid navbar-container d-none d-lg-block px-0" id="main-menu">
     <div class="container">
-      <nav class="navbar navbar--nowrap p-0">
-        <a class="navbar-brand navbar-brand--img" href="pages-list.html">
-          <img src="img/logotype-realty.svg" alt="Interfax Недвижимость">
-        </a>
-        <div class="navbar-block-relative">
+      <nav class="navbar p-0">
+        <a class="navbar-brand" href="pages-list.html"></a>
+        <div>
           <!-- Regions menu 1280-->
           <ul class="navbar-nav nav-regions flex-row d-none d-xl-flex">
             <li class="nav-item">
-              <a class="nav-link pl-0" href="region.html">Новости</a>
+              <a class="nav-link pl-0" href="region.html">Москва</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="region.html">Аналитика</a>
+              <a class="nav-link" href="region.html">Центр</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="region.html">Эксперты</a>
+              <a class="nav-link" href="region.html">Северо-Запад</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="region.html">Проекты</a>
+              <a class="nav-link" href="region.html">Юг и Северный Кавказ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="region.html">События</a>
+              <a class="nav-link" href="region.html">Поволжье</a>
             </li>
-            <li class="d-none d-xl-flex ml-auto">
-              <a class="btn-nav-search btn-nav-search--top" href="#" data-event="showSearchField" data-target="#section-menu-search">
-                <svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find"></use>
-                </svg>
-                </a>
+            <li class="nav-item">
+              <a class="nav-link" href="region.html">Урал</a>
             </li>
-            <li>
-              <!-- Search field -->
-              <div class="input-menu-search" id="section-menu-search">
-                <form>
-                  <div class="input-group input-group-search">
-                    <input type="text" class="form-control" placeholder="Поиск" aria-label="Поиск">
-                    <a class="btn-close"><svg style="fill:none" width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close-gray"></use></svg></a>
-                    <div class="input-group-append d-none d-md-flex">
-                      <a class="btn" type="submit" id="button-addon2" ><svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find-white"></use></svg></a>
-                    </div>
-                  </div> <!-- /input-group -->
-                </form>
-              </div>
-              <!-- /Search end-->
+            <li class="nav-item">
+              <a class="nav-link" href="region.html">Сибирь</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="region.html">Дальний Восток</a>
             </li>
           </ul>
           <!-- /Regions menu 1280 end-->
@@ -162,6 +137,26 @@
                   </div>
                 </div>
               </li>
+              <li class="btn-nav-search-wrap">
+                <a class="d-block btn-nav-search border-left-0" href="#" data-event="showSearchField" data-target="#region-menu-search">
+                  <svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find"></use></svg>
+                </a>
+              </li>
+              <li class="">
+                <!-- Search field -->
+                <div class="input-menu-search input-menu-search-md" id="region-menu-search">
+                  <form>
+                    <div class="input-group input-group-search">
+                      <input type="text" class="form-control" placeholder="Поиск" aria-label="Поиск">
+                      <a class="btn-close"><svg style="fill:none" width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close-gray"></use></svg></a>
+                      <div class="input-group-append d-none d-md-flex">
+                        <a class="btn" type="submit" id="button-addon2" ><svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find-white"></use></svg></a>
+                      </div>
+                    </div> <!-- /input-group -->
+                  </form>
+                </div>
+                <!-- /Search end-->
+              </li>
             </ul>
             <a class="nav-link pr-0 btn-green text-nowrap" href="#">Вход для подписчиков</a>
           </div> <!-- /nav-regions-dropdown -->
@@ -171,53 +166,50 @@
           <div class="d-flex align-items-center">
             <ul class="navbar-nav nav-sections">
               <li class="nav-item">
-                <a class="nav-link pl-0" href="all-main-events.html">ПМЭФ-2023</a>
+                <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="all-news.html">Восстановление крымского моста</a>
+                <a class="nav-link" href="all-news.html">Новости</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="all-exclusive.html">Реновация жилья</a>
-              </li>
-              <li class="nav-item d-none d-xl-block">
-                <a class="nav-link" href="all-viewpoints.html">Санкции в строительстве и их последствия</a>
+                <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="press-center.html">Крым</a>
+                <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link pr-0" href="#">Москва</a>
+                <a class="nav-link" href="press-center.html">Пресс-центр</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pr-0" href="all-photoreports.html">Фоторепортажи</a>
+              </li>
+              <li class="d-none d-xl-flex">
+                <a class="d-block btn-nav-search" href="#" data-event="showSearchField" data-target="#section-menu-search">
+                  <svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find"></use>
+                  </svg>
+                  </a>
+              </li>
+              <li>
+                <!-- Search field -->
+                <div class="input-menu-search" id="section-menu-search">
+                  <form>
+                    <div class="input-group input-group-search">
+                      <input type="text" class="form-control" placeholder="Поиск" aria-label="Поиск">
+                      <a class="btn-close"><svg style="fill:none" width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close-gray"></use></svg></a>
+                      <div class="input-group-append d-none d-md-flex">
+                        <a class="btn" type="submit" id="button-addon2" ><svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find-white"></use></svg></a>
+                      </div>
+                    </div> <!-- /input-group -->
+                  </form>
+                </div>
+                <!-- /Search end-->
               </li>
             </ul>
-            <div class="sections-menu-new">
-              <button class="new-hamburger" aria-label="Меню">
-                <span class="new-hamburger__inner"></span>
-                <span class="new-hamburger__inner"></span>
-                <span class="new-hamburger__inner"></span>
-              </button>
-              <div class="sections-menu-new__dropdown">
-                <ul class="sections-menu-new__list">
-                  <li class="sections-menu-new__list-item sections-menu-new__list-item--tablet">
-                    <a class="sections-menu-new__list-link" href="#">Санкции в строительстве и их последствия</a>
-                  </li>
-                  <li class="sections-menu-new__list-item">
-                    <a class="sections-menu-new__list-link" href="#">Меры поддержки</a>
-                  </li>
-                  <li class="sections-menu-new__list-item">
-                    <a class="sections-menu-new__list-link" href="#">Аренда</a>
-                  </li>
-                  <li class="sections-menu-new__list-item">
-                    <a class="sections-menu-new__list-link" href="#">город будущего </a>
-                  </li>
-                  <li class="sections-menu-new__list-item">
-                    <a class="sections-menu-new__list-link" href="#">ипотека в москве и московской области</a>
-                  </li>
-                  <li class="sections-menu-new__list-item">
-                    <a class="sections-menu-new__list-link" href="#">Новостройки</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <ul class="navbar-nav flex-row ml-20 align-items-center d-none d-xl-flex">
+              <li class="">
+                <a class="nav-link pr-0 btn-green" href="#">Вход для подписчиков</a>
+              </li>
+            </ul>
           </div>
           <!-- /Sections menu end-->
         </div>
@@ -235,7 +227,7 @@
       <div class="container">
         <nav class="navbar navbar-scroll">
           <div class="d-flex align-items-center">
-            <a class="navbar-brand navbar-brand-scroll navbar-brand-scroll-realty" href="pages-list.html"></a>
+            <a class="navbar-brand navbar-brand-scroll" href="pages-list.html"></a>
           </div>
           <div class="navbar-scroll-body">
             <a class="region-selected-text d-none d-md-block" data-toggle="collapse" data-target="#navbarScroll" aria-expanded="false">
@@ -914,74 +906,81 @@
   <!-- /Scroll and mobile menu end -->
 </header>
 
-<!-- Main content -->
+<!-- Content -->
 <div class="container mt-20 mt-md-40">
   <div class="row">
     <!-- Left and central column -->
-    <div class="col-md-12 col-lg-8 col-xl-9 mb-20 pr-xl-0">
+    <div class="col-md-12 col-lg-8 col-xl-9 mb-20 pr-xl-0 mt-20 mt-md-0">
       <div class="row">
         <!-- Left column -->
         <div class="col-12 col-xl-4 border-right border-light border-lg-0">
           <div class="mt-20 mt-md-0"><!--  sticky-top -->
-            <section class="mb-20">
-              <h4 class="h4-lg text-primary mb-20"><a href="all-news.html" class="text-primary">Новости</a></h4>
-              <div class="scroll-new" data-simplebar data-simplebar-scrollbar-max-size="72">
-                <ul class="list-unstyled list-group lenta-news">
-                  <li>
-                    <a href="news.html" class="d-block mb-10">Тепло подается на все объекты столицы - Бирюков</a>
-                    <span class="news-datetime mb-20">10 октября, 19:04</span>
-                  </li>
-                  <li>
-                    <a href="news.html" class="d-block mb-10">
-                      Рязанская область впервые
-                      вошла в число регионов с
-                      высокой устойчивостью
-                    </a>
-                    <span class="news-datetime mb-15">10 октября, 19:49</span>
-                  </li>
-                  <li>
-                    <a href="news.html" class="d-block mb-10">
-                      Китайские мастера воссоздадут
-                      панно XVIII века для Царского
-                      Села
-                    </a>
-                    <span class="news-datetime mb-15">10 октября, 20:03 </span>
-                  </li>
-                  <li>
-                    <a href="news.html" class="d-block mb-10">Реконструкция автодороги Екатеринбург-Тюмень отложена на два года</a>
-                    <span class="news-datetime mb-15">10 октября, 20:03 </span>
-                  </li>
-                  <li>
-                    <span class="recommended-new mb-10">Рекомендовано редакцией</span>
-                    <a href="news.html" class="d-block mb-10">Военно-Грузинскую дорогу закрыли для грузовиков</a>
-                    <span class="news-datetime mb-15">10 октября, 20:20</span>
-                  </li>
-                  <li>
-                    <a href="news.html" class="d-block mb-10">
-                      Китайские мастера воссоздадут
-                      панно XVIII века для Царского
-                      Села
-                    </a>
-                    <span class="news-datetime mb-15">10 октября, 20:03 </span>
-                  </li>
-                  <li>
-                    <a href="news.html" class="d-block mb-10">Реконструкция автодороги Екатеринбург-Тюмень отложена на два года</a>
-                    <span class="news-datetime mb-15">10 октября, 20:03 </span>
-                  </li>
-                  <li class="">
-                    <span class="recommended-new mb-10">Рекомендовано редакцией</span>
-                    <a href="news.html" class="d-block mb-10">Военно-Грузинскую дорогу закрыли для грузовиков</a>
-                    <span class="news-datetime mb-15">10 октября, 20:20</span>
-                  </li>
-                </ul>
-              </div>
-              <!-- For 1280 -->
-              <a href="all-news.html" class="btn-more-data btn-more-data-edged d-none d-xl-flex">
-                <span>Все новости</span>
+            <section class="d-flex d-xl-block align-items-center justify-content-between border-bottom border-light border-xl-0 mb-20 pb-10 pb-md-20 pb-xl-0">
+              <h2 class="text-primary pb-0 pb-xl-20 border-bottom border-light border-lg-0">Интервью</h2>
+              <a href="#filters" data-toggle="collapse" class="btn-collapse text-sm text-gray">
+                <span class="mr-5">Фильтры</span>
+                <svg style="fill:none" width="10" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-gray"></use></svg>
               </a>
-              <!-- For mobile -->
-              <a href="all-news.html" class="d-block d-xl-none text-uppercase font-weight-bold text-sm text-right w-100 border-bottom border-top border-light py-15">Все новости<svg class="ml-10" style="fill:none" width="11" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-black"></use></svg></a>
             </section>
+
+            <div class="collapse" id="filters">
+              <div class="wrap filters-wrap">
+                <section>
+                  <label class="text-sm text-gray d-none d-md-block d-xl-none">Эксперт</label>
+                  <div class="btn-group btn-group-filter mb-15">
+                    <a class="btn region-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span>Все эксперты</span>
+                      <svg style="fill:none" width="15" height="9"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-group-arrow"></use></svg>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-filter">
+                      <a class="dropdown-item active" href="#">Все эксперты</a>
+                      <a class="dropdown-item" href="#">Москва</a>
+                      <a class="dropdown-item" href="#">Центр</a>
+                      <a class="dropdown-item" href="#">Северо-Запад</a>
+                      <a class="dropdown-item" href="#">Юг и Северный Кавказ</a>
+                      <a class="dropdown-item" href="#">Поволжье</a>
+                      <a class="dropdown-item" href="#">Урал</a>
+                      <a class="dropdown-item" href="#">Сибирь</a>
+                      <a class="dropdown-item" href="#">Дальний Восток</a>
+                    </div>
+                  </div><!--  /btn-group-filter -->
+                </section>
+                <section>
+                  <div class="form-calendar">
+                    <label class="text-sm text-gray">Выбрать период</label>
+                    <div class="input-group">
+                        <input type="text" name="daterange" class="form-control" >
+                        <span class="separator">&mdash;</span>
+                        <input type="text" name="daterange" class="form-control">
+                    </div>
+                  </div>
+                </section>
+              </div> <!-- /filters-wrap -->
+            </div> <!-- /collapse -->
+
+            <ul class="list-unstyled list-menu py-20 mb-0 d-none d-xl-block" id="list-menu">
+              <li>
+                <h4 class=""><a href="#" class="text-primary">Все материалы</a></h4>
+              </li>
+              <li>
+                <h4 class=""><a href="all-experts-realty.html" class="active text-primary">Все эксперты</a></h4>
+              </li>
+              <li>
+                <h4 class=""><a href="#" class="text-primary">Новости</a></h4>
+              </li>
+              <li>
+                <h4 class=""><a href="exclusive.html" class="text-primary">Эксклюзив</a></h4>
+              </li>
+              <li>
+                <h4 class=""><a href="report.html" class="text-primary">Репортажи</a></h4>
+              </li>
+              <li>
+                <h4 class=""><a href="all-photoreports.html" class="text-primary">Фоторепортажи</a></h4>
+              </li>
+              <li>
+                <h4 class=""><a href="#" class="text-primary">Пресс-релизы</a></h4>
+              </li>
+            </ul>
 
           </div> <!-- /sticky-top -->
         </div> <!-- /col -->
@@ -989,37 +988,109 @@
 
         <!-- Central column -->
         <div class="col-12 col-xl-8 mt-0">
-          <ul class="list-unstyled list-announce">
-              <li class=" pt-20">
-                <div class="media media-viewpoint mb-20 mb-md-0">
-                  <img src="img/viewpoint-img5.png" class="img-fluid w-100" alt="viewpoint-img">
-                  <div class="media-body d-none d-md-block">
-                    <h3 class="h2-md text-white ">Минстрой РФ, Росатом и Газпром подписали соглашение о сотрудничестве при организации строительного чемпионата</h3>
-                  </div> <!-- /media-body -->
-                  <a href="#" class="stretched-link"></a>
-                </div> <!-- /media -->
-                <!-- /For mobile -->
-                <h1 class="d-block d-md-none mb-20"><a href="#">Минстрой РФ, Росатом и Газпром подписали соглашение о сотрудничестве при организации строительного чемпионата</a></h1>
-              </li>
-              <li class="pt-20">
-                <div class="media media-news-announce">
-                  <div class="media-body">
-                      <span class="media-news-announce__subtitle mb-10">Новости</span>
-                      <h4 class="h4"><a href="">Размер скидки на новостройки в Москве начал уменьшаться</a></h4>
-                  </div>
-                  <img src="img/announce-sm-new-01.jpg" class="img-fluid" alt="anons-img4">
-                </div>
-              </li>
-              <li class="border-bottom-0">
-                <div class="media media-news-announce">
-                  <div class="media-body">
-                      <span class="media-news-announce__subtitle mb-10">Новости</span>
-                      <h4 class="h4 mb-0"><a href="">Киностудию Горького ждет модернизация</a></h4>
-                  </div>
-                  <img src="img/announce-sm-new-01.jpg" class="img-fluid" alt="anons-img4">
-                </div>
-              </li>
+          <ul class="list-unstyled ">
+            <li class=" position-relative border-bottom border-light mb-20 pb-0 pb-md-20">
+              <div class="media media-viewpoint">
+                <img src="img/viewpoint-img10.png" class="img-fluid w-100" alt="viewpoint-img">
+                <div class="media-body d-none d-md-block">
+                  <h3 class="text-white">Управление сроками — первый и возможно наиболее важный этап проекта — Павел Гуштюк</h3>
+                  <span class="news-datetime text-white opacity-50">10 октября, 23:20</span>
+                </div> <!-- /media-body -->
+              </div> <!-- /media -->
+              <!-- For mobile  -->
+              <div class="d-block d-md-none mt-20">
+                <h3 class="mb-10">Управление сроками — первый и возможно наиболее важный этап проекта — Павел Гуштюк</h3>
+                <span class="news-datetime mb-15">10 октября, 23:20</span>
+              </div>
+              <!-- /For mobile end -->
+              <a href="news-read-more.html" class="stretched-link"></a>
+            </li>
+            <li class=" position-relative border-bottom border-light mb-20 pb-0 pb-md-20">
+              <div class="media media-viewpoint">
+                <img src="img/viewpoint-img11.png" class="img-fluid w-100" alt="viewpoint-img">
+                <div class="media-body d-none d-md-block">
+                  <h3 class="text-white">Мы преодолели психологический рубеж в тысячу проблемных домов – Константин Тимофеев</h3>
+                  <span class="news-datetime text-white opacity-50">10 октября, 23:20</span>
+                </div> <!-- /media-body -->
+              </div> <!-- /media -->
+              <!-- For mobile  -->
+              <div class="d-block d-md-none mt-20">
+                <h3 class="mb-10">Мы преодолели психологический рубеж в тысячу проблемных домов – Константин Тимофеев</h3>
+                <span class="news-datetime mb-15">10 октября, 23:20</span>
+              </div>
+              <!-- /For mobile end -->
+              <a href="news-read-more.html" class="stretched-link"></a>
+            </li>
+            <li class=" position-relative border-bottom border-light mb-20 pb-0 pb-md-20">
+              <div class="media media-viewpoint">
+                <img src="img/viewpoint-img12.png" class="img-fluid w-100" alt="viewpoint-img">
+                <div class="media-body d-none d-md-block">
+                  <h3 class="text-white">В цифровизации важно слышать голос рынка – Игорь Афанасьев</h3>
+                  <span class="news-datetime text-white opacity-50">10 октября, 23:20</span>
+                </div> <!-- /media-body -->
+              </div> <!-- /media -->
+              <!-- For mobile  -->
+              <div class="d-block d-md-none mt-20">
+                <h3 class="mb-10">В цифровизации важно слышать голос рынка – Игорь Афанасьев</h3>
+                <span class="news-datetime mb-15">10 октября, 23:20</span>
+              </div>
+              <!-- /For mobile end -->
+              <a href="news-read-more.html" class="stretched-link"></a>
+            </li>
+            <li class=" position-relative border-bottom border-light mb-20 pb-0 pb-md-20">
+              <div class="media media-viewpoint">
+                <img src="img/viewpoint-img13.png" class="img-fluid w-100" alt="viewpoint-img">
+                <div class="media-body d-none d-md-block">
+                  <h3 class="text-white">Городам нужна инфраструктура "для грехов" — Никита Маликов</h3>
+                  <span class="news-datetime text-white opacity-50">10 октября, 23:20</span>
+                </div> <!-- /media-body -->
+              </div> <!-- /media -->
+              <!-- For mobile  -->
+              <div class="d-block d-md-none mt-20">
+                <h3 class="mb-10">Городам нужна инфраструктура "для грехов" — Никита Маликов</h3>
+                <span class="news-datetime mb-15">10 октября, 23:20</span>
+              </div>
+              <!-- /For mobile end -->
+              <a href="news-read-more.html" class="stretched-link"></a>
+            </li>
+            <li class=" position-relative border-bottom border-light mb-20 pb-0 pb-md-20">
+              <div class="media media-viewpoint">
+                <img src="img/viewpoint-img14.png" class="img-fluid w-100" alt="viewpoint-img">
+                <div class="media-body d-none d-md-block">
+                  <h3 class="text-white">Экономический эффект от ИИ в строительстве может составить до 2,7 трлн рублей на рубеже 5-10 лет – Николай Козак</h3>
+                  <span class="news-datetime text-white opacity-50">10 октября, 23:20</span>
+                </div> <!-- /media-body -->
+              </div> <!-- /media -->
+              <!-- For mobile  -->
+              <div class="d-block d-md-none mt-20">
+                <h3 class="mb-10">Экономический эффект от ИИ в строительстве может составить до 2,7 трлн рублей на рубеже 5-10 лет – Николай Козак</h3>
+                <span class="news-datetime mb-15">10 октября, 23:20</span>
+              </div>
+              <!-- /For mobile end -->
+              <a href="news-read-more.html" class="stretched-link"></a>
+            </li>
+            <li class=" position-relative border-bottom border-light mb-20 pb-0 pb-md-20">
+              <div class="media media-viewpoint">
+                <img src="img/viewpoint-img15.png" class="img-fluid w-100" alt="viewpoint-img">
+                <div class="media-body d-none d-md-block">
+                  <h3 class="text-white">Как будто на Луне собираются строить — Алексей Расходчиков</h3>
+                  <span class="news-datetime text-white opacity-50">10 октября, 23:20</span>
+                </div> <!-- /media-body -->
+              </div> <!-- /media -->
+              <!-- For mobile  -->
+              <div class="d-block d-md-none mt-20">
+                <h3 class="mb-10">Как будто на Луне собираются строить — Алексей Расходчиков</h3>
+                <span class="news-datetime mb-15">10 октября, 23:20</span>
+              </div>
+              <!-- /For mobile end -->
+              <a href="news-read-more.html" class="stretched-link"></a>
+            </li>
           </ul>
+          
+          <a class="btn btn-show-more w-100 font-weight-bold">
+            <svg class="" style="fill:none" width="18" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-show-more"></use></svg>
+             Показать еще
+          </a>
         </div> <!-- /col -->
         <!-- /Central column end -->
       </div> <!-- /row -->
@@ -1028,7 +1099,6 @@
 
     <!-- Right column -->
     <div class="col-md-12 col-lg-4 col-xl-3">
-      <div class="">
         <div class="banner-vr mb-20">
             <a href="#" class="banner-vr__link">
                 <picture class="banner-vr__img">
@@ -1036,369 +1106,38 @@
                 </picture>
             </a>
         </div>
-        <article class="editorial-material-new editorial-material-new--bg">
-          <span class="editorial-material-new__category">Редакционный материал</span>
-          <a href="#" class="editorial-material-new__title">Размер скидки на новостройки в Москве начал уменьшаться</a>
-          <span class="editorial-material-new__help">10 октября, 23:20</span>
-          <picture class="editorial-material-new__bg">
-            <img src="img/interfax-editorial-material.svg" alt="Image">
-          </picture>
-        </article>
-      </div>
-    </div> <!-- /col -->
-    <!-- /Right column end-->
-  </div> <!-- /row -->
-</div> <!-- /container -->
-
-<!-- Analytics -->
-<div class="container-fluid bg-brown-light pt-20 mt-20 px-0 pb-mb-5 pb-20">
-  <div class="container media-photo-reports">
-    <h3 class="text-primary pb-15">Аналитика</h3>
-    <div class="row">
-      <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-        <section>
-          <img src="img/photo-report.png" class="img-fluid w-100 mb-15" alt="photo-report">
-          <h5 class="">Размер скидки на новостройки в Москве начал уменьшаться</h5>
-          <a href="#" class="stretched-link"></a>
-        </section>
-      </div> <!-- col -->
-      <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-        <section class="pt-md-0 pt-20 border-md-0 border-top border-light">
-          <img src="img/photo-report2.png" class="img-fluid w-100 mb-15" alt="photo-report">
-          <h5 class="">В России можно говорить о старте второго этапа реализации КРТ - Мария Синичич</h5>
-          <a href="#" class="stretched-link"></a>
-        </section>
-      </div> <!-- col -->
-      <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-        <section class="pt-md-0 pt-20 border-md-0 border-top border-light">
-          <img src="img/photo-report3.png" class="img-fluid w-100 mb-15" alt="photo-report">
-          <h5 class="">Размер скидки на новостройки в Москве начал уменьшаться</h5>
-          <a href="#" class="stretched-link"></a>
-        </section>
-      </div> <!-- col -->
-      <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-        <section class="pt-md-0 pt-20 border-md-0 border-top border-light">
-          <img src="img/photo-report4.png" class="img-fluid w-100 mb-15" alt="photo-report">
-          <h5 class="">Размер скидки на новостройки в Москве начал уменьшаться </h5>
-          <a href="#" class="stretched-link"></a>
-        </section>
-      </div> <!-- col -->
-    </div> <!-- row -->
-    <div class="container d-md-none mt-5 border-top border-bottom border-light">
-      <div class="row px-md-0">
-        <a href="#" class="text-uppercase text-sm ml-auto py-15"><b>Вся аналитика</b><svg class="ml-10" style="fill:none" width="11" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-black"></use></svg></a>
-      </div> <!-- /row -->
-    </div>
-    
-    
-  </div> <!-- /container -->
-</div> <!-- /container-fluid -->
-<!-- /Analytics end-->
-
-<!-- Main content -->
-<div class="container mt-20 mt-md-40">
-  <div class="row">
-    <!-- Left and central column -->
-    <div class="col-md-12 col-lg-8 col-xl-9 mb-20 pr-xl-0">
-      <div class="row">
-        <!-- Left column -->
-        <div class="col-12 col-xl-4 border-right border-light border-lg-0">
-          <div class="mt-20 mt-md-0"><!--  sticky-top -->
-            <section class="mb-20">
-              <h4 class="h4-lg text-primary mb-20"><a href="all-news.html" class="text-primary">Мнения</a></h4>
-              <ul class="list-unstyled list-group lenta-news">
-                <li>
-                  <picture class="d-block mb-10">
-                    <img src="img/all-reports2.png" class="img-fluid" alt="Image">
-                  </picture>
-                  <a href="news.html" class="d-block mb-10">Интеграция властей и застройщиков может преодолеть неувязки в законодательстве по применению ТИМ</a>
-                  <div class="d-flex align-items-center mb-20">
-                    <span class="news-datetime">10 октября, 19:04</span>
-                    <span class="promo-new__help promo-new__help--short promo-new-trigger ml-10">
-                      <span>Реклама</span>
-                      <div class="promo-new__dropdown">
-                        Рекламный материал предоставлен
-                        ООО “Агрокомплекс”, ОГРН 119200284729,
-                        Токен N18ZSH1899
-                      </div>
-                    </span>
+        <h4 class="text-primary mb-20"><a href="all-news.html" class="text-primary">Самое читаемое</a></h4>
+        <ul class="list-unstyled list-group lenta-news mb-10">
+          <li class="border-bottom border-light mb-15">
+            <a href="#" class="d-block mb-10">Тепло подается на все объекты столицы - Бирюков</a>
+            <span class="news-datetime mb-20">10 октября, 19:04</span>
+          </li>
+          <li class="border-bottom border-light mb-15">
+            <a href="#" class="d-block mb-10">Рязанская область впервые вошла в число регионов с высокой устойчивостью </a>
+            <span class="news-datetime mb-15">10 октября, 19:49</span>
+          </li>
+          <li class="border-bottom border-light mb-15">
+            <a href="#" class="d-block mb-10">Китайские мастера воссоздадут панно XVIII века для Царского Села </a>
+            <span class="news-datetime mb-15">10 октября, 20:03</span>
+          </li>
+          <li class="border-bottom border-light mb-15">
+            <a href="#" class="d-block mb-10">Реконструкция автодороги Екатеринбург-Тюмень отложена на два года</a>
+            <span class="news-datetime mb-15">10 октября, 20:03</span>
+          </li>
+          <li class="border-bottom border-light mb-15">
+            <a href="#" class="d-block mb-10">Военно-Грузинскую дорогу закрыли для грузовиков</a><div class="d-flex align-items-center mb-20">
+              <span class="news-datetime">10 октября, 19:04</span>
+              <span class="promo-new__help promo-new__help--short promo-new-trigger ml-10">
+                <span>Реклама</span>
+                <div class="promo-new__dropdown">
+                  Рекламный материал предоставлен
+                  ООО “Агрокомплекс”, ОГРН 119200284729,
+                  Токен N18ZSH1899
                 </div>
-                </li>
-                <li>
-                  <picture class="d-block mb-10">
-                    <img src="img/all-reports3.png" class="img-fluid" alt="Image">
-                  </picture>
-                  <a href="news.html" class="d-block mb-10">Мастер-класс главного архитектора Москвы собрал рекордное количество участников</a>
-                  <span class="news-datetime mb-15">10 октября, 19:49</span>
-                </li>
-                <li>
-                  <picture class="d-block mb-10">
-                    <img src="img/all-reports4.png" class="img-fluid" alt="Image">
-                  </picture>
-                  <a href="news.html" class="d-block mb-10">Росреестр и РЖД будут сотрудничать во внедрении сервисов в сфере кадастрового учета</a>
-                  <span class="news-datetime mb-15">10 октября, 20:03 </span>
-                </li>
-              </ul>
-              <!-- For 1280 -->
-              <a href="#" class="btn-more-data btn-more-data-edged d-none d-xl-flex">
-                <span>Все мнения</span>
-              </a>
-              <!-- For mobile -->
-              <a href="#" class="d-block d-xl-none text-uppercase font-weight-bold text-sm text-right w-100 border-bottom border-top border-light py-15">Все мнения<svg class="ml-10" style="fill:none" width="11" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-black"></use></svg></a>
-            </section>
-
-          </div> <!-- /sticky-top -->
-        </div> <!-- /col -->
-        <!-- /Left column end -->
-
-        <!-- Central column -->
-        <div class="col-12 col-xl-8 mt-0">
-          <div class="mb-20">
-            <h4 class="h4-lg text-primary"><a href="all-news.html" class="text-primary">Проекты</a></h4>
-          </div>
-          <ul class="list-unstyled list-announce">
-              <li class=" pt-20">
-                <div class="media media-viewpoint mb-20 mb-md-0">
-                  <img src="img/viewpoint-img5.png" class="img-fluid w-100" alt="viewpoint-img">
-                  <div class="media-body d-none d-md-block">
-                    <h3 class="h2-md text-white ">Павильон АТОМ на ВДНХ откроют <br>4 ноября</h3>
-                  </div> <!-- /media-body -->
-                  <a href="#" class="stretched-link"></a>
-                </div> <!-- /media -->
-                <!-- /For mobile -->
-                <h1 class="d-block d-md-none mb-20"><a href="#">Павильон АТОМ на ВДНХ откроют <br>4 ноября</a></h1>
-              </li>
-              <li class="pt-20">
-                <div class="media media-news-announce">
-                  <div class="media-body">
-                      <span class="media-news-announce__subtitle mb-10">КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ</span>
-                      <h4 class="h4"><a href="">Киностудию Горького ждет модернизация</a></h4>
-                  </div>
-                  <img src="img/announce-sm-new-01.jpg" class="img-fluid" alt="anons-img4">
-                </div>
-              </li>
-              <li class="">
-                <div class="media media-news-announce">
-                  <div class="media-body">
-                      <span class="media-news-announce__subtitle mb-10">КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ</span>
-                      <h4 class="h4 mb-0"><a href="">Как строится штаб-квартира Яндекса на Воробьёвых горах</a></h4>
-                  </div>
-                  <img src="img/announce-sm-new-01.jpg" class="img-fluid" alt="anons-img4">
-                </div>
-              </li>
-              <li class="">
-                <div class="media media-news-announce">
-                  <div class="media-body">
-                      <span class="media-news-announce__subtitle mb-10">КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ</span>
-                      <h4 class="h4 mb-0"><a href="">Панорамный ресторан и общественный променад появятся на московском ипподроме</a></h4>
-                  </div>
-                  <img src="img/announce-sm-new-01.jpg" class="img-fluid" alt="anons-img4">
-                </div>
-              </li>
-          </ul>
-          <a class="btn btn-show-more w-100 font-weight-bold">
-            <svg class="" style="fill:none" width="18" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-show-more"></use></svg>
-             Показать еще
-          </a>
-        </div> <!-- /col -->
-        <!-- /Central column end -->
-      </div> <!-- /row -->
-    </div> <!-- /col -->
-    <!-- /Left and central column end-->
-
-    <!-- Right column -->
-    <div class="col-md-12 col-lg-4 col-xl-3">
-      <div class="banner-vr mb-20">
-          <a href="#" class="banner-vr__link banner-vr__link--square">
-              <picture class="banner-vr__img">
-                  <img src="img/banner-square.jpg" alt="Image">
-              </picture>
-          </a>
-      </div>
-      <article class="editorial-material-new editorial-material-new--bg-blue">
-        <span class="editorial-material-new__promo">Промо</span>
-        <a href="#" class="editorial-material-new__title">Размер скидки на новостройки в Москве начал уменьшаться</a>
-        <span class="editorial-material-new__help">10 октября, 23:20</span>
-      </article>
-      <article class="editorial-material-new mt-20">
-        <span class="editorial-material-new__category">Редакционный материал</span>
-        <a href="#" class="editorial-material-new__title">Размер скидки на новостройки в Москве начал уменьшаться</a>
-        <span class="editorial-material-new__help">10 октября, 23:20</span>
-      </article>
-    </div> <!-- /col -->
-    <!-- /Right column end-->
-  </div> <!-- /row -->
-</div> <!-- /container -->
-
-<!-- Company news -->
-<div class="container-fluid bg-primary pt-20 mt-20 px-0 pb-20">
-  <div class="container media-photo-reports">
-    <h3 class="text-white pb-15">Новости компаний</h3>
-    <div class="row">
-      <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-        <section class="border-bottom border-photo-report media-height-full">
-          <p class="text-white mb-10">Премиальный дом с 343 арками на фасадах появится в Дорогомиловском районе Москвы</p>
-          <p class="date-new">10 октября, 19:04</p>
-          <a href="#" class="stretched-link"></a>
-        </section>
-      </div> <!-- col -->
-      <div class="col-12 col-md-6 col-lg-6 col-xl-3 mt-md-0 mt-20">
-        <section class="border-bottom border-photo-report media-height-full">
-          <p class="text-white mb-10">NGRAD и KASKAD Недвижимость построят коттеджный поселок на берегу Икшинского водохранилища</p>
-          <p class="date-new">10 октября, 19:49</p>
-          <a href="#" class="stretched-link"></a>
-        </section>
-      </div> <!-- col -->
-      <div class="col-12 col-md-6 col-lg-6 col-xl-3 mt-xl-0 mt-20">
-        <section class="border-bottom border-photo-report media-height-full">
-          <p class="text-white mb-10">KR Properties получил новый ГПЗУ на комплекс Fly Tower в Москве</p>
-          <p class="date-new">10 октября, 20:03</p>
-          <a href="#" class="stretched-link"></a>
-        </section>
-      </div> <!-- col -->
-      <div class="col-12 col-md-6 col-lg-6 col-xl-3 mt-xl-0 mt-20">
-        <section class="border-bottom border-photo-report media-height-full">
-          <p class="text-white mb-10">INGRAD начал работы по благоустройству в жилом квартале FORIVER </p>
-          <p class="date-new">10 октября, 20:03</p>
-          <a href="#" class="stretched-link"></a>
-        </section>
-      </div> <!-- col -->
-    </div> <!-- row -->
-    <div class="container d-md-none mt-5 border-bottom border-photo-report">
-      <div class="row px-md-0">
-        <a href="#" class="text-white text-uppercase text-sm ml-auto py-15"><b>Все пресс-релизы</b><svg class="ml-10" style="fill:none" width="11" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-black"></use></svg></a>
-      </div> <!-- /row -->
-    </div>
-    
-    
-  </div> <!-- /container -->
-</div> <!-- /container-fluid -->
-<!-- /Company news end-->
-
-<!-- Main content -->
-<div class="container mt-20 mt-md-40">
-  <div class="row">
-    <!-- Left and central column -->
-    <div class="col-md-12 col-lg-8 col-xl-9 mb-20 pr-xl-0">
-      <div class="row">
-        <!-- Left column -->
-        <div class="col-12 col-xl-4 border-right border-light border-lg-0">
-          <div class="mt-20 mt-md-0"><!--  sticky-top -->
-            <section class="mb-20">
-              <h4 class="h4-lg text-primary mb-20"><a href="all-news.html" class="text-primary">События</a></h4>
-              <div class="scroll-new" data-simplebar data-simplebar-scrollbar-max-size="72">
-                <ul class="list-unstyled list-group lenta-news">
-                  <li>
-                    <a href="news.html" class="d-block mb-10">Тепло подается на все объекты столицы - Бирюков</a>
-                    <span class="news-datetime mb-20">10 октября, 19:04</span>
-                  </li>
-                  <li>
-                    <a href="news.html" class="d-block mb-10">
-                      Рязанская область впервые
-                      вошла в число регионов с
-                      высокой устойчивостью
-                    </a>
-                    <span class="news-datetime mb-15">10 октября, 19:49</span>
-                  </li>
-                  <li>
-                    <a href="news.html" class="d-block mb-10">
-                      Китайские мастера воссоздадут
-                      панно XVIII века для Царского
-                      Села
-                    </a>
-                    <span class="news-datetime mb-15">10 октября, 20:03 </span>
-                  </li>
-                  <li>
-                    <a href="news.html" class="d-block mb-10">Реконструкция автодороги Екатеринбург-Тюмень отложена на два года</a>
-                    <span class="news-datetime mb-15">10 октября, 20:03 </span>
-                  </li>
-                  <li>
-                    <span class="recommended-new recommended-new--transparent mb-10">Рекомендовано редакцией</span>
-                    <a href="news.html" class="d-block mb-10">Военно-Грузинскую дорогу закрыли для грузовиков</a>
-                    <span class="news-datetime mb-15">10 октября, 20:20</span>
-                  </li>
-                  <li>
-                    <a href="news.html" class="d-block mb-10">
-                      Китайские мастера воссоздадут
-                      панно XVIII века для Царского
-                      Села
-                    </a>
-                    <span class="news-datetime mb-15">10 октября, 20:03 </span>
-                  </li>
-                  <li>
-                    <a href="news.html" class="d-block mb-10">Реконструкция автодороги Екатеринбург-Тюмень отложена на два года</a>
-                    <span class="news-datetime mb-15">10 октября, 20:03 </span>
-                  </li>
-                  <li>
-                    <span class="recommended-new mb-10">Рекомендовано редакцией</span>
-                    <a href="news.html" class="d-block mb-10">Военно-Грузинскую дорогу закрыли для грузовиков</a>
-                    <span class="news-datetime mb-15">10 октября, 20:20</span>
-                  </li>
-                </ul>
-              </div>
-              <!-- For 1280 -->
-              <a href="all-news.html" class="btn-more-data btn-more-data-edged d-none d-xl-flex">
-                <span>Все события</span>
-              </a>
-              <!-- For mobile -->
-              <a href="all-news.html" class="d-block d-xl-none text-uppercase font-weight-bold text-sm text-right w-100 border-bottom border-top border-light py-15">Все события<svg class="ml-10" style="fill:none" width="11" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-black"></use></svg></a>
-            </section>
-
-          </div> <!-- /sticky-top -->
-        </div> <!-- /col -->
-        <!-- /Left column end -->
-
-        <!-- Central column -->
-        <div class="col-12 col-xl-8 mt-0">
-          <h4 class="h4-lg text-primary mb-20"><a href="all-news.html" class="text-primary">Интервью</a></h4>
-          <ul class="list-unstyled list-announce">
-              <li class=" pt-20">
-                <div class="media media-viewpoint mb-20 mb-md-0">
-                  <img src="img/viewpoint-img5.png" class="img-fluid w-100" alt="viewpoint-img">
-                  <div class="media-body d-none d-md-block">
-                    <h3 class="h2-md text-white ">Платить за ливневку должны не налогоплательщики, а собственники земельных участков — Евгений Михайленко</h3>
-                  </div> <!-- /media-body -->
-                  <a href="#" class="stretched-link"></a>
-                </div> <!-- /media -->
-                <!-- /For mobile -->
-                <h1 class="d-block d-md-none mb-20"><a href="#">Платить за ливневку должны не налогоплательщики, а собственники земельных участков — Евгений Михайленко</a></h1>
-              </li>
-              <li class=" pt-20">
-                <div class="media media-viewpoint mb-20 mb-md-0">
-                  <img src="img/viewpoint-img5.png" class="img-fluid w-100" alt="viewpoint-img">
-                  <div class="media-body d-none d-md-block">
-                    <h3 class="h2-md text-white ">В России можно говорить о старте второго этапа реализации КРТ — Мария Синичич</h3>
-                  </div> <!-- /media-body -->
-                  <a href="#" class="stretched-link"></a>
-                </div> <!-- /media -->
-                <!-- /For mobile -->
-                <h1 class="d-block d-md-none mb-20"><a href="#">В России можно говорить о старте второго этапа реализации КРТ — Мария Синичич</a></h1>
-              </li>
-          </ul>
-          <a class="btn btn-show-more w-100 font-weight-bold">
-            <svg class="" style="fill:none" width="18" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-show-more"></use></svg>
-             Показать еще
-          </a>
-        </div> <!-- /col -->
-        <!-- /Central column end -->
-      </div> <!-- /row -->
-    </div> <!-- /col -->
-    <!-- /Left and central column end-->
-
-    <!-- Right column -->
-    <div class="col-md-12 col-lg-4 col-xl-3">
-      <div class="banner-vr mb-20">
-          <a href="#" class="banner-vr__link">
-              <picture class="banner-vr__img">
-                  <img src="img/banner-vr-2.jpg" alt="Image">
-              </picture>
-          </a>
-      </div>
-      <article class="editorial-material-new">
-        <span class="editorial-material-new__category">Редакционный материал</span>
-        <a href="#" class="editorial-material-new__title">Размер скидки на новостройки в Москве начал уменьшаться</a>
-        <span class="editorial-material-new__help">10 октября, 23:20</span>
-      </article>
+              </span>
+            </div>
+          </li>
+        </ul>
     </div> <!-- /col -->
     <!-- /Right column end-->
   </div> <!-- /row -->
@@ -1462,7 +1201,8 @@
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/daterangepicker.js"></script>
 <script src="js/script.js"></script>
 
 </body>

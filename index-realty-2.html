@@ -923,6 +923,16 @@
         <!-- Left column -->
         <div class="col-12 col-xl-4 border-right border-light border-lg-0">
           <div class="mt-20 mt-md-0"><!--  sticky-top -->
+            <div class="new-exchange-rates mb-40">
+                <div class="new-exchange-rates__item">
+                    <span class="new-exchange-rates__help">USD</span>
+                    <span class="new-exchange-rates__value">88,16 <span class="green">0,29</span></span>
+                </div>
+                <div class="new-exchange-rates__item">
+                    <span class="new-exchange-rates__help">EUR</span>
+                    <span class="new-exchange-rates__value">96,14 <span class="green">0,11</span></span>
+                </div>
+            </div>
             <section class="mb-20">
               <h4 class="h4-lg text-primary mb-20"><a href="all-news.html" class="text-primary">Новости</a></h4>
               <div class="scroll-new" data-simplebar data-simplebar-scrollbar-max-size="72">
@@ -1029,14 +1039,36 @@
     <!-- Right column -->
     <div class="col-md-12 col-lg-4 col-xl-3">
       <div class="">
-        <div class="banner-vr mb-20">
-            <a href="#" class="banner-vr__link">
-                <picture class="banner-vr__img">
-                    <img src="img/banner-vr.jpg" alt="Image">
-                </picture>
-            </a>
-        </div>
-        <article class="editorial-material-new editorial-material-new--bg">
+        <article class="editorial-material-new">
+          <span class="editorial-material-new__category">Интерфакс-недвижимость</span>
+          <a href="#" class="editorial-material-new__title">Размер скидки на новостройки в Москве начал уменьшаться</a>
+          <span class="editorial-material-new__help">10 октября, 23:20</span>
+        </article>
+        <article class="news-subs-new mt-20">
+            <h3 class="news-subs-new__title">Подписка на главные новости недвижимости</h3>
+            <!-- <p class="news-subs-new__description">Спасибо за проявленный интерес! Вам на почту придёт письмо для подтверждения подписки</p> -->
+            <!-- add class 'is--error' -->
+            <form action="#" class="news-subs-new__form">
+                <div class="news-subs-new__form-inner">
+                    <input type="text" class="news-subs-new__input" placeholder="Введите вашу почту">
+                    <button class="news-subs-new__btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
+                            <path d="M1 8.71973H15M15 8.71973L8 1.71973M15 8.71973L8 15.7197" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <span class="news-subs-new__error">Некорректный формат email</span>
+            </form>
+        </article>
+        <article class="editorial-material-new editorial-material-new--bg-blue mt-20">
+          <span class="editorial-material-new__promo">Промо</span>
+          <a href="#" class="editorial-material-new__title">Размер скидки на новостройки в Москве начал уменьшаться</a>
+          <span class="editorial-material-new__help">10 октября, 23:20</span>
+          <picture class="editorial-material-new__bg">
+            <img src="img/interfax-editorial-material.svg" alt="Image">
+          </picture>
+        </article>
+        <article class="editorial-material-new editorial-material-new--bg mt-20">
           <span class="editorial-material-new__category">Редакционный материал</span>
           <a href="#" class="editorial-material-new__title">Размер скидки на новостройки в Москве начал уменьшаться</a>
           <span class="editorial-material-new__help">10 октября, 23:20</span>
@@ -1122,7 +1154,7 @@
                         Токен N18ZSH1899
                       </div>
                     </span>
-                </div>
+                  </div>
                 </li>
                 <li>
                   <picture class="d-block mb-10">
@@ -1208,23 +1240,25 @@
 
     <!-- Right column -->
     <div class="col-md-12 col-lg-4 col-xl-3">
-      <div class="banner-vr mb-20">
-          <a href="#" class="banner-vr__link banner-vr__link--square">
-              <picture class="banner-vr__img">
-                  <img src="img/banner-square.jpg" alt="Image">
-              </picture>
-          </a>
-      </div>
-      <article class="editorial-material-new editorial-material-new--bg-blue">
-        <span class="editorial-material-new__promo">Промо</span>
-        <a href="#" class="editorial-material-new__title">Размер скидки на новостройки в Москве начал уменьшаться</a>
-        <span class="editorial-material-new__help">10 октября, 23:20</span>
-      </article>
-      <article class="editorial-material-new mt-20">
-        <span class="editorial-material-new__category">Редакционный материал</span>
-        <a href="#" class="editorial-material-new__title">Размер скидки на новостройки в Москве начал уменьшаться</a>
-        <span class="editorial-material-new__help">10 октября, 23:20</span>
-      </article>
+        <div class="">
+            <div class="banner-vr mb-20">
+                <a href="#" class="banner-vr__link banner-vr__link--square">
+                    <picture class="banner-vr__img">
+                        <img src="img/banner-square.jpg" alt="Image">
+                    </picture>
+                </a>
+            </div>
+            <article class="editorial-material-new editorial-material-new--bg-blue">
+              <span class="editorial-material-new__promo">Промо</span>
+              <a href="#" class="editorial-material-new__title">Размер скидки на новостройки в Москве начал уменьшаться</a>
+              <span class="editorial-material-new__help">10 октября, 23:20</span>
+            </article>
+            <article class="editorial-material-new mt-20">
+              <span class="editorial-material-new__category">Редакционный материал</span>
+              <a href="#" class="editorial-material-new__title">Размер скидки на новостройки в Москве начал уменьшаться</a>
+              <span class="editorial-material-new__help">10 октября, 23:20</span>
+            </article>
+        </div>
     </div> <!-- /col -->
     <!-- /Right column end-->
   </div> <!-- /row -->
@@ -1313,7 +1347,7 @@
                     <span class="news-datetime mb-15">10 октября, 20:03 </span>
                   </li>
                   <li>
-                    <span class="recommended-new recommended-new--transparent mb-10">Рекомендовано редакцией</span>
+                    <span class="recommended-new mb-10">Рекомендовано редакцией</span>
                     <a href="news.html" class="d-block mb-10">Военно-Грузинскую дорогу закрыли для грузовиков</a>
                     <span class="news-datetime mb-15">10 октября, 20:20</span>
                   </li>

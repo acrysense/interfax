@@ -9405,6 +9405,9 @@ h4 {
 .text-blue-green {
   color: #7AD0D7; }
 
+.text-dark-teal {
+  color: #00A9B2; }
+
 .text-blue-gray {
   color: #99AAAB; }
 
@@ -10184,6 +10187,10 @@ footer {
 .navbar-brand-scroll-realty {
   width: 173px;
   background-image: url(../img/logotype-realty-mobile.svg); }
+
+.navbar-brand-scroll-tourism {
+  width: 173px;
+  background-image: url(../img/logotype-tourism-mobile.svg); }
 
 @media (max-width: 1279px) {
   .navbar-brand {
@@ -11991,6 +11998,12 @@ input {
               transition-duration: 500ms;
       -webkit-transition-property: background;
       transition-property: background; }
+    .promo-new__help--short .promo-new__dropdown {
+      left: -63.5px;
+      min-width: 223px;
+      width: 223px; }
+      .promo-new__help--short .promo-new__dropdown::before {
+        left: calc(50% + 29px); }
     .promo-new__help.is--active {
       color: #042F60; }
       .promo-new__help.is--active::after {
@@ -12007,6 +12020,13 @@ input {
         color: #042F60; }
         .promo-new__help.promo-new-trigger:hover::after {
           background: #042F60; }
+    @media screen and (max-width: 767px) {
+      .promo-new__help--short .promo-new__dropdown {
+        left: -68.5px;
+        min-width: 223px;
+        width: 223px; }
+        .promo-new__help--short .promo-new__dropdown::before {
+          left: calc(50% + 29px); } }
   .promo-new__dropdown {
     position: absolute;
     left: -57.5px;
@@ -12168,6 +12188,10 @@ input {
   line-height: 1.24;
   color: #ffffff;
   background: #00A9B2; }
+  .recommended-new--transparent {
+    padding: 0;
+    color: #00A9B2;
+    background: transparent; }
 
 .page-bg-new {
   position: absolute;
@@ -12415,11 +12439,170 @@ input {
     line-height: 1.24;
     text-transform: uppercase;
     text-align: left;
+    cursor: pointer;
     -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out; }
     .sections-menu-new__list-link:hover {
       color: #042F60;
       background: #F9F9F9; }
+
+.lenta-news-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+
+.new-exchange-rates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 20px;
+  background: #F9F9F9; }
+  .new-exchange-rates__item {
+    width: calc(50% - 10px); }
+    .new-exchange-rates__item:nth-child(2n) {
+      margin-left: 20px; }
+  .new-exchange-rates__help {
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.33846;
+    color: #858C95; }
+  .new-exchange-rates__value {
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 17px;
+    font-weight: normal; }
+    .new-exchange-rates__value span {
+      font-size: 14px; }
+      .new-exchange-rates__value span.green {
+        color: #28A745; }
+      .new-exchange-rates__value span.red {
+        color: #EB5757; }
+
+.content-link-new {
+  text-decoration: underline;
+  color: #00A9B2;
+  cursor: pointer; }
+  .content-link-new:hover {
+    color: #00A9B2; }
+  .content-link-new:active {
+    color: #00A9B2; }
+
+.news-subs-new {
+  padding: 20px;
+  color: #ffffff;
+  background: #042F60; }
+  .news-subs-new__title {
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.2381; }
+  .news-subs-new__description {
+    display: block;
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 1.4; }
+  .news-subs-new__form {
+    display: block;
+    margin-top: 20px;
+    width: 100%; }
+    .news-subs-new__form.is--error .news-subs-new__input {
+      color: #FF4949; }
+    .news-subs-new__form.is--error .news-subs-new__error {
+      display: block; }
+  .news-subs-new__form-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+  .news-subs-new__input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    display: block;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    padding: 9px 16px;
+    max-width: calc(100% - 40px);
+    width: 100%;
+    font-size: 17px;
+    font-weight: normal;
+    color: #000;
+    background: #ffffff;
+    border: none;
+    border-radius: 0;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out; }
+    .news-subs-new__input::-webkit-input-placeholder {
+      opacity: 1;
+      color: #858C95; }
+    .news-subs-new__input::-moz-placeholder {
+      opacity: 1;
+      color: #858C95; }
+    .news-subs-new__input:-ms-input-placeholder {
+      opacity: 1;
+      color: #858C95; }
+    .news-subs-new__input::-ms-input-placeholder {
+      opacity: 1;
+      color: #858C95; }
+    .news-subs-new__input::placeholder {
+      opacity: 1;
+      color: #858C95; }
+    .news-subs-new__input:focus {
+      outline: none; }
+  .news-subs-new__btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0;
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    background: #00A9B2;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out; }
+    .news-subs-new__btn > svg {
+      min-width: 16px;
+      width: 16px;
+      height: 16px;
+      fill: #fff; }
+    .news-subs-new__btn:focus {
+      outline: none; }
+  .news-subs-new__error {
+    display: none;
+    margin-top: 10px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.24;
+    color: #FF4949; }
+
+.opacity-50 {
+  opacity: 0.5; }
 
 .scroll-new {
   overflow-x: hidden;
