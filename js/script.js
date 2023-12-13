@@ -199,6 +199,22 @@ $(function(e) {
 	});
   }
 
+  // sections menu new
+  var sectionsMenuNew = $('.sections-menu-new')
+  var newHamburger = $('.new-hamburger')
+
+  if (newHamburger) {
+    newHamburger.on('click', function(event) {
+        event.stopPropagation();
+
+        if (sectionsMenuNew.hasClass('is--active')) {
+            sectionsMenuNew.removeClass('is--active')
+        } else {
+            sectionsMenuNew.addClass('is--active')
+        }
+    });
+}
+
   // ====== DATERANGEPICKER Календарь =========
   var datepicker = $('input.daterange');
   if(datepicker.length > 0) {
