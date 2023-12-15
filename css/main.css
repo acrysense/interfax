@@ -12604,6 +12604,36 @@ input {
 .opacity-50 {
   opacity: 0.5; }
 
+.fixed-scroll-new-left {
+  position: relative;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+          transform: translate3d(0px, 0px, 0px);
+  width: 278.164px; }
+  .fixed-scroll-new-left > *:first-child {
+    margin-top: 0 !important; }
+  .fixed-scroll-new-left > *:last-child {
+    margin-bottom: 0 !important; }
+
+.fixed-scroll-new-center {
+  position: relative;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+          transform: translate3d(0px, 0px, 0px);
+  width: 598.328px; }
+  .fixed-scroll-new-center > *:first-child {
+    margin-top: 0 !important; }
+  .fixed-scroll-new-center > *:last-child {
+    margin-bottom: 0 !important; }
+
+.fixed-scroll-new-right {
+  position: relative;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+          transform: translate3d(0px, 0px, 0px);
+  width: 272.5px; }
+  .fixed-scroll-new-right > *:first-child {
+    margin-top: 0 !important; }
+  .fixed-scroll-new-right > *:last-child {
+    margin-bottom: 0 !important; }
+
 .scroll-new {
   overflow-x: hidden;
   margin-right: -30px;

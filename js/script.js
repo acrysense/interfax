@@ -766,4 +766,223 @@ $(function(e) {
     $(this).find(".carousel-report-title").text(imgTitle);
     $(this).find(".carousel-report-num").text(imgNum);
   });
+
+  // scroll
+  let prevScrollpos = window.pageYOffset;
+  const product = document.querySelector('.fixed-scroll-new')
+  const fixedScrollNewLeft = document.querySelector('.fixed-scroll-new-left')
+  const fixedScrollNewCenter = document.querySelector('.fixed-scroll-new-center')
+  const fixedScrollNewRight = document.querySelector('.fixed-scroll-new-right')
+  let coordOffsetLeftBottom = 0 // Fixed block on bottom position
+  let coordOffsetCenterBottom = 0 // Fixed block on bottom position
+  let coordOffsetRightBottom = 0 // Fixed block on bottom position
+  let coordOffsetLeftTop = 0 // Fixed block on offsetop position
+  let coordOffsetCenterTop = 0 // Fixed block on offsetop position
+  let coordOffsetRightTop = 0 // Fixed block on offsetop position
+
+  function getCoords(elem) {
+      let box = elem.getBoundingClientRect();
+      
+      return {
+          top: box.top + pageYOffset,
+          left: box.left + pageXOffset
+      };
+  }
+
+  function productScroll() {
+    if (product && fixedScrollNewRight) {
+        if (window.innerWidth >= 1024) {
+            let currentScrollPos = window.pageYOffset;
+
+            if (prevScrollpos > currentScrollPos || prevScrollpos <= 0) { // If up
+                if (fixedScrollNewLeft.getBoundingClientRect().height != product.getBoundingClientRect().height) {
+                    // for left
+                    if (fixedScrollNewLeft.classList.contains('product__fixed--active')) { // Если при фиксированном блоке скроллим вверх - убираем фиксацию
+                        console.log('fixed-1')
+                        fixedScrollNewLeft.classList.remove('product__fixed--active')
+                        fixedScrollNewLeft.classList.add('product__fixed--bottom')
+                        fixedScrollNewLeft.style.position = 'relative'
+                        fixedScrollNewLeft.style.top = '0px'
+                        fixedScrollNewLeft.style.transform = 'translate3d(0px, ' + coordOffsetLeftTop + 'px, 0px)'
+                    }
+
+                    if (window.pageYOffset <= (getCoords(fixedScrollNewLeft).top - Number(87)) && fixedScrollNewLeft.classList.contains('product__fixed--bottom')) { // Если проскроллили до верха блока - фиксируем
+                        console.log('fixed-2')
+                        fixedScrollNewLeft.classList.add('product__fixed--top')
+                        fixedScrollNewLeft.style.position = 'fixed'
+                        fixedScrollNewLeft.style.top = '87px'
+                        fixedScrollNewLeft.style.transform = 'translate3d(0px, 0px, 0px)'
+                    }
+
+                    if (window.pageYOffset <= (product.offsetTop - Number(87)) && fixedScrollNewLeft.classList.contains('product__fixed--top')) {
+                        console.log('fixed-3')
+                        fixedScrollNewLeft.classList.remove('product__fixed--top')
+                        fixedScrollNewLeft.style.position = 'relative'
+                        fixedScrollNewLeft.style.top = '0px'
+                        fixedScrollNewLeft.style.transform = 'translate3d(0px, 0px, 0px)'
+                    }
+                }
+
+                if (fixedScrollNewCenter.getBoundingClientRect().height != product.getBoundingClientRect().height) {
+                    // for center
+                    if (fixedScrollNewCenter.classList.contains('product__fixed--active')) { // Если при фиксированном блоке скроллим вверх - убираем фиксацию
+                        console.log('fixed-1')
+                        fixedScrollNewCenter.classList.remove('product__fixed--active')
+                        fixedScrollNewCenter.classList.add('product__fixed--bottom')
+                        fixedScrollNewCenter.style.position = 'relative'
+                        fixedScrollNewCenter.style.top = '0px'
+                        fixedScrollNewCenter.style.transform = 'translate3d(0px, ' + coordOffsetCenterTop + 'px, 0px)'
+                    }
+
+                    if (window.pageYOffset <= (getCoords(fixedScrollNewCenter).top - Number(87)) && fixedScrollNewCenter.classList.contains('product__fixed--bottom')) { // Если проскроллили до верха блока - фиксируем
+                        console.log('fixed-2')
+                        fixedScrollNewCenter.classList.add('product__fixed--top')
+                        fixedScrollNewCenter.style.position = 'fixed'
+                        fixedScrollNewCenter.style.top = '87px'
+                        fixedScrollNewCenter.style.transform = 'translate3d(0px, 0px, 0px)'
+                    }
+
+                    if (window.pageYOffset <= (product.offsetTop - Number(87)) && fixedScrollNewCenter.classList.contains('product__fixed--top')) {
+                        console.log('fixed-3')
+                        fixedScrollNewCenter.classList.remove('product__fixed--top')
+                        fixedScrollNewCenter.style.position = 'relative'
+                        fixedScrollNewCenter.style.top = '0px'
+                        fixedScrollNewCenter.style.transform = 'translate3d(0px, 0px, 0px)'
+                    }
+                }
+
+                if (fixedScrollNewRight.getBoundingClientRect().height != product.getBoundingClientRect().height) {
+                    // for right
+                    if (fixedScrollNewRight.classList.contains('product__fixed--active')) { // Если при фиксированном блоке скроллим вверх - убираем фиксацию
+                        console.log('fixed-1')
+                        fixedScrollNewRight.classList.remove('product__fixed--active')
+                        fixedScrollNewRight.classList.add('product__fixed--bottom')
+                        fixedScrollNewRight.style.position = 'relative'
+                        fixedScrollNewRight.style.top = '0px'
+                        fixedScrollNewRight.style.transform = 'translate3d(0px, ' + coordOffsetRightTop + 'px, 0px)'
+                    }
+
+                    if (window.pageYOffset <= (getCoords(fixedScrollNewRight).top - Number(87)) && fixedScrollNewRight.classList.contains('product__fixed--bottom')) { // Если проскроллили до верха блока - фиксируем
+                        console.log('fixed-2')
+                        fixedScrollNewRight.classList.add('product__fixed--top')
+                        fixedScrollNewRight.style.position = 'fixed'
+                        fixedScrollNewRight.style.top = '87px'
+                        fixedScrollNewRight.style.transform = 'translate3d(0px, 0px, 0px)'
+                    }
+
+                    if (window.pageYOffset <= (product.offsetTop - Number(87)) && fixedScrollNewRight.classList.contains('product__fixed--top')) {
+                        console.log('fixed-3')
+                        fixedScrollNewRight.classList.remove('product__fixed--top')
+                        fixedScrollNewRight.style.position = 'relative'
+                        fixedScrollNewRight.style.top = '0px'
+                        fixedScrollNewRight.style.transform = 'translate3d(0px, 0px, 0px)'
+                    }
+                }
+            } else { // If down
+                coordOffsetLeftTop = getCoords(fixedScrollNewLeft).top - product.offsetTop
+                coordOffsetCenterTop = getCoords(fixedScrollNewCenter).top - product.offsetTop
+                coordOffsetRightTop = getCoords(fixedScrollNewRight).top - product.offsetTop
+
+                if (fixedScrollNewLeft.getBoundingClientRect().height != product.getBoundingClientRect().height) {
+                    // for left
+                    if (fixedScrollNewLeft.classList.contains('product__fixed--top')) {
+                        fixedScrollNewLeft.classList.remove('product__fixed--top')
+                        fixedScrollNewLeft.style.position = 'relative'
+                        fixedScrollNewLeft.style.top = '0px'
+                        fixedScrollNewLeft.style.transform = 'translate3d(0px, ' + coordOffsetLeftTop + 'px, 0px)'
+                    }
+                    
+                    if (window.pageYOffset >= getCoords(fixedScrollNewLeft).top + fixedScrollNewLeft.getBoundingClientRect().height - (document.documentElement.clientHeight - Number(30)) && !fixedScrollNewLeft.classList.contains('product__fixed--active')) {
+                        if (!((window.pageYOffset - product.offsetTop) - Number(30) >= product.getBoundingClientRect().height - document.documentElement.clientHeight)) {
+                            coordOffsetLeftBottom = (window.pageYOffset - product.offsetTop) - fixedScrollNewLeft.getBoundingClientRect().height + window.innerHeight - 30
+                        }
+    
+                        fixedScrollNewLeft.classList.add('product__fixed--active')
+                        fixedScrollNewLeft.style.position = 'fixed'
+                        fixedScrollNewLeft.style.top = document.documentElement.clientHeight - Number(30) + 'px'
+                        fixedScrollNewLeft.style.transform = 'translate3d(0px, -100%, 0px)'
+                    }
+                    if ((window.pageYOffset - product.offsetTop) - Number(30) >= product.getBoundingClientRect().height - document.documentElement.clientHeight) {
+                        let transformFixedBottom = product.getBoundingClientRect().height - fixedScrollNewLeft.getBoundingClientRect().height
+    
+                        fixedScrollNewLeft.classList.remove('product__fixed--active')
+                        fixedScrollNewLeft.classList.add('product__fixed--bottom')
+                        fixedScrollNewLeft.style.position = 'relative'
+                        fixedScrollNewLeft.style.top = '0px'
+                        fixedScrollNewLeft.style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
+                    }
+                }
+
+                if (fixedScrollNewCenter.getBoundingClientRect().height != product.getBoundingClientRect().height) {
+                    // for center
+                    if (fixedScrollNewCenter.classList.contains('product__fixed--top')) {
+                        fixedScrollNewCenter.classList.remove('product__fixed--top')
+                        fixedScrollNewCenter.style.position = 'relative'
+                        fixedScrollNewCenter.style.top = '0px'
+                        fixedScrollNewCenter.style.transform = 'translate3d(0px, ' + coordOffsetCenterTop + 'px, 0px)'
+                    }
+                    
+                    if (window.pageYOffset >= getCoords(fixedScrollNewCenter).top + fixedScrollNewCenter.getBoundingClientRect().height - (document.documentElement.clientHeight - Number(30)) && !fixedScrollNewCenter.classList.contains('product__fixed--active')) {
+                        if (!((window.pageYOffset - product.offsetTop) - Number(30) >= product.getBoundingClientRect().height - document.documentElement.clientHeight)) {
+                            coordOffsetCenterBottom = (window.pageYOffset - product.offsetTop) - fixedScrollNewCenter.getBoundingClientRect().height + window.innerHeight - 30
+                        }
+
+                        fixedScrollNewCenter.classList.add('product__fixed--active')
+                        fixedScrollNewCenter.style.position = 'fixed'
+                        fixedScrollNewCenter.style.top = document.documentElement.clientHeight - Number(30) + 'px'
+                        fixedScrollNewCenter.style.transform = 'translate3d(0px, -100%, 0px)'
+                    }
+                    if ((window.pageYOffset - product.offsetTop) - Number(30) >= product.getBoundingClientRect().height - document.documentElement.clientHeight) {
+                        let transformFixedBottom = product.getBoundingClientRect().height - fixedScrollNewCenter.getBoundingClientRect().height
+
+                        fixedScrollNewCenter.classList.remove('product__fixed--active')
+                        fixedScrollNewCenter.classList.add('product__fixed--bottom')
+                        fixedScrollNewCenter.style.position = 'relative'
+                        fixedScrollNewCenter.style.top = '0px'
+                        fixedScrollNewCenter.style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
+                    }
+                }
+
+                if (fixedScrollNewRight.getBoundingClientRect().height != product.getBoundingClientRect().height) {
+                    // for right
+                    if (fixedScrollNewRight.classList.contains('product__fixed--top')) {
+                        fixedScrollNewRight.classList.remove('product__fixed--top')
+                        fixedScrollNewRight.style.position = 'relative'
+                        fixedScrollNewRight.style.top = '0px'
+                        fixedScrollNewRight.style.transform = 'translate3d(0px, ' + coordOffsetRightTop + 'px, 0px)'
+                    }
+                    
+                    if (window.pageYOffset >= getCoords(fixedScrollNewRight).top + fixedScrollNewRight.getBoundingClientRect().height - (document.documentElement.clientHeight - Number(30)) && !fixedScrollNewRight.classList.contains('product__fixed--active')) {
+                        if (!((window.pageYOffset - product.offsetTop) - Number(30) >= product.getBoundingClientRect().height - document.documentElement.clientHeight)) {
+                            coordOffsetRightBottom = (window.pageYOffset - product.offsetTop) - fixedScrollNewRight.getBoundingClientRect().height + window.innerHeight - 30
+                        }
+
+                        fixedScrollNewRight.classList.add('product__fixed--active')
+                        fixedScrollNewRight.style.position = 'fixed'
+                        fixedScrollNewRight.style.top = document.documentElement.clientHeight - Number(30) + 'px'
+                        fixedScrollNewRight.style.transform = 'translate3d(0px, -100%, 0px)'
+                    }
+                    if ((window.pageYOffset - product.offsetTop) - Number(30) >= product.getBoundingClientRect().height - document.documentElement.clientHeight) {
+                        let transformFixedBottom = product.getBoundingClientRect().height - fixedScrollNewRight.getBoundingClientRect().height
+
+                        fixedScrollNewRight.classList.remove('product__fixed--active')
+                        fixedScrollNewRight.classList.add('product__fixed--bottom')
+                        fixedScrollNewRight.style.position = 'relative'
+                        fixedScrollNewRight.style.top = '0px'
+                        fixedScrollNewRight.style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
+                    }
+                }
+            }
+            prevScrollpos = currentScrollPos;
+        } else {
+            fixedScrollNewRight.style.position = 'relative'
+            fixedScrollNewRight.style.top = '0px'
+            fixedScrollNewRight.style.transform = 'translate3d(0px, 0px, 0px)'
+        }
+    }
+  }
+  
+  window.addEventListener('scroll', () => {
+    productScroll()
+  })
 });
