@@ -12607,38 +12607,59 @@ input {
 .fixed-scroll-new-left {
   position: relative;
   -webkit-transform: translate3d(0px, 0px, 0px);
-          transform: translate3d(0px, 0px, 0px);
-  width: 278.164px; }
+          transform: translate3d(0px, 0px, 0px); }
   .fixed-scroll-new-left > *:first-child {
     margin-top: 0 !important; }
   .fixed-scroll-new-left > *:last-child {
     margin-bottom: 0 !important; }
+  @media screen and (min-width: 1280px) {
+    .fixed-scroll-new-left {
+      width: 278.164px; } }
+  @media screen and (max-width: 1279px) {
+    .fixed-scroll-new-left {
+      position: static !important;
+      -webkit-transform: none !important;
+              transform: none !important; } }
 
 .fixed-scroll-new-center {
   position: relative;
   -webkit-transform: translate3d(0px, 0px, 0px);
-          transform: translate3d(0px, 0px, 0px);
-  width: 598.328px; }
+          transform: translate3d(0px, 0px, 0px); }
   .fixed-scroll-new-center > *:first-child {
     margin-top: 0 !important; }
   .fixed-scroll-new-center > *:last-child {
     margin-bottom: 0 !important; }
+  @media screen and (min-width: 1280px) {
+    .fixed-scroll-new-center {
+      width: 598.328px; } }
+  @media screen and (max-width: 1279px) {
+    .fixed-scroll-new-center {
+      position: static !important;
+      -webkit-transform: none !important;
+              transform: none !important; } }
 
 .fixed-scroll-new-right {
   position: relative;
   -webkit-transform: translate3d(0px, 0px, 0px);
-          transform: translate3d(0px, 0px, 0px);
-  width: 272.5px; }
+          transform: translate3d(0px, 0px, 0px); }
   .fixed-scroll-new-right > *:first-child {
     margin-top: 0 !important; }
   .fixed-scroll-new-right > *:last-child {
     margin-bottom: 0 !important; }
+  @media screen and (min-width: 1024px) {
+    .fixed-scroll-new-right {
+      width: 272.5px; } }
+  @media screen and (max-width: 1023px) {
+    .fixed-scroll-new-right {
+      position: static !important;
+      -webkit-transform: none !important;
+              transform: none !important; } }
 
 .scroll-new {
   overflow-x: hidden;
   margin-right: -30px;
   padding-right: 30px;
-  max-height: 643px; }
+  max-height: 647px; }
   .scroll-new .simplebar-content-wrapper {
     padding-right: 30px;
     -webkit-clip-path: inset(0 30px 0 0);
