@@ -1123,26 +1123,51 @@ document.addEventListener('DOMContentLoaded', function () {
     // page bg
     const pageBg = document.querySelector('.page-bg-new')
 
-    if (pageBg) {
-        let pageHeaderHeight = document.querySelector('header').getBoundingClientRect().height
-        let pageContentUlPadding = parseInt(getComputedStyle(document.querySelector('.page-bg-new-content > ul')).paddingTop)
-        let pageContentLiHeight = 0;
+    function onPagebgHeight() {
+        var pageHeaderHeight = 0;
+        var pageContentUlPadding = 0;
+        var pageContentLiHeight = 0;
+        let pageTopNewsHeight = 0;
+        var pageBgHeight = 0;
 
-        for (let index = 0; index < 3; index++) {
-            pageContentLiHeight += document.querySelectorAll('.page-bg-new-content > ul > li')[index].getBoundingClientRect().height;
-        }
-
-        console.log(pageContentLiHeight)
-
-        let pageBgHeight = pageHeaderHeight
-
-        pageBg.style.height = pageBgHeight + pageContentUlPadding + pageContentLiHeight + Number(40) + 'px'
-    }
+        if (window.innerWidth >= 1280) {
+            pageHeaderHeight = document.querySelector('header').getBoundingClientRect().height
+            pageContentUlPadding = parseInt(getComputedStyle(document.querySelector('.page-bg-new-content > ul')).paddingTop)
+            pageContentLiHeight = 0;
     
+            for (var index = 0; index < 3; index++) {
+                pageContentLiHeight += document.querySelectorAll('.page-bg-new-content > ul > li')[index].getBoundingClientRect().height;
+            }
+    
+            pageBgHeight = pageHeaderHeight + pageContentUlPadding + pageContentLiHeight + Number(40)
+        } else if (window.innerWidth >= 768 && window.innerWidth <= 1279) {
+            pageHeaderHeight = document.querySelector('header').getBoundingClientRect().height
+            pageTopNewsHeight = document.querySelector('.page-bg-new-news').getBoundingClientRect().height
+
+            pageBgHeight = pageHeaderHeight + pageTopNewsHeight + Number(40)
+        } else {
+            pageHeaderHeight = document.querySelector('.scroll-menu').getBoundingClientRect().height
+            pageTopNewsHeight = document.querySelector('.page-bg-new-news').getBoundingClientRect().height
+
+            pageBgHeight = pageHeaderHeight + pageTopNewsHeight
+        }
+        
+        pageBg.style.height = pageBgHeight + 'px'
+    }
+
+    if (pageBg) {
+        onPagebgHeight()
+    }
+
     // background
     BackgroundCheck.init({
         targets: '.bg-check',
         images: '.page-bg-new__img'
     });
-    console.log('true')
+    
+    window.addEventListener('resize', () => {
+        if (pageBg) {
+            onPagebgHeight()
+        }
+    })
 })
