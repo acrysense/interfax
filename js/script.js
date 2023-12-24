@@ -1,22 +1,4 @@
 $(function(e) {
-    // page bg
-    const pageBg = document.querySelector('.page-bg-new')
-
-    if (pageBg) {
-        let pageHeaderHeight = document.querySelector('header').getBoundingClientRect().height
-        let pageContentUlPadding = parseInt(getComputedStyle(document.querySelector('.page-bg-new-content > ul')).paddingTop)
-        let pageContentLiHeight = 0;
-
-        for (let index = 0; index < 3; index++) {
-            pageContentLiHeight += document.querySelectorAll('.page-bg-new-content > ul > li')[index].getBoundingClientRect().height;
-        }
-
-        console.log(pageContentLiHeight)
-
-        let pageBgHeight = pageHeaderHeight
-
-        pageBg.style.height = pageBgHeight + pageContentUlPadding + pageContentLiHeight + Number(40) + 'px'
-    }
 
   // ========= STOP PROPAGATION ==========
   $('[data-events="stopProp"]').on('click', function (event) {
@@ -1138,6 +1120,25 @@ $(function(e) {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+    // page bg
+    const pageBg = document.querySelector('.page-bg-new')
+
+    if (pageBg) {
+        let pageHeaderHeight = document.querySelector('header').getBoundingClientRect().height
+        let pageContentUlPadding = parseInt(getComputedStyle(document.querySelector('.page-bg-new-content > ul')).paddingTop)
+        let pageContentLiHeight = 0;
+
+        for (let index = 0; index < 3; index++) {
+            pageContentLiHeight += document.querySelectorAll('.page-bg-new-content > ul > li')[index].getBoundingClientRect().height;
+        }
+
+        console.log(pageContentLiHeight)
+
+        let pageBgHeight = pageHeaderHeight
+
+        pageBg.style.height = pageBgHeight + pageContentUlPadding + pageContentLiHeight + Number(40) + 'px'
+    }
+    
     // background
     BackgroundCheck.init({
         targets: '.bg-check',
