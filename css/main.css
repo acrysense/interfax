@@ -9307,17 +9307,29 @@ a.text-blue-light:focus, a.text-blue-light:hover {
             animation: slideInDown .25s ease-out; }
     .scroll-menu.active .input-menu-search-sm {
       display: block; }
+  .scroll-menu .region-selected-text .white {
+    display: none; }
   @media screen and (max-width: 1023px) {
-    .scroll-menu--blur {
+    .scroll-menu--blur:not(.active) {
       background: rgba(0, 0, 0, 0.2);
       -webkit-backdrop-filter: blur(6px);
               backdrop-filter: blur(6px);
-      -webkit-transition: background 0.25s ease;
-      transition: background 0.25s ease;
+      -webkit-transition: all 0.25s ease;
+      transition: all 0.25s ease;
       -webkit-transform: translate3d(0, 0, 0);
               transform: translate3d(0, 0, 0); }
-      .scroll-menu--blur > a {
+      .scroll-menu--blur:not(.active) > a {
         color: #fff !important; }
+      .scroll-menu--blur:not(.active) .navbar-scroll .region-selected-text span {
+        color: #fff !important; }
+      .scroll-menu--blur:not(.active) .region-selected-text .default {
+        display: none; }
+      .scroll-menu--blur:not(.active) .region-selected-text .white {
+        display: inline; }
+      .scroll-menu--blur:not(.active) .navbar-brand-scroll-realty {
+        background-image: url(../img/logotype-realty-mobile-white.svg); }
+      .scroll-menu--blur:not(.active) .navbar-toggler-icon {
+        background-image: url(../img/icon-hamburger-white.svg); }
     .scroll-menu--blur.show {
       background: #fff; } }
 
