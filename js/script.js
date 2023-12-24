@@ -199,6 +199,48 @@ $(function(e) {
 	});
   }
 
+    // resize
+    window.addEventListener('resize', () => {
+		popularListDropdowns()
+    });
+
+	// popular list
+	const popularList = document.querySelector('.sections-menu-nav-new')
+	const popularListItem = document.querySelectorAll('.sections-menu-nav-new > .nav-item')
+	const popularListDropdown = document.querySelectorAll('.sections-menu-new__list > .sections-menu-new__list-item')
+
+	let popularListWidth = 0
+	let popularListItemWidth = 0
+
+	function popularListDropdowns() {
+		if (popularList && popularListItem && popularListDropdown) {
+			popularListItemWidth = 0
+			popularListWidth = popularList.offsetWidth
+
+            console.log(popularListWidth)
+
+			popularListItem.forEach(item => {
+				item.classList.remove('is--visible')
+			})
+			popularListDropdown.forEach(item => {
+				item.classList.remove('is--hidden')
+			})
+
+			for (let i = 0; i < popularListItem.length; i++) {
+                console.log((popularListItemWidth + popularListItem[i].offsetWidth), popularListWidth)
+				if ((popularListItemWidth + popularListItem[i].offsetWidth) <= popularListWidth) {
+					popularListItemWidth += popularListItem[i].offsetWidth;
+					popularListItem[i].classList.add('is--visible');
+					popularListDropdown[i].classList.add('is--hidden');
+				} else {
+					break;
+				}
+			}
+		}
+	}
+
+	popularListDropdowns()
+
   // sections menu new
   var sectionsMenuNew = $('.sections-menu-new')
   var newHamburger = $('.new-hamburger')

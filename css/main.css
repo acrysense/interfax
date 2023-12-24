@@ -12366,6 +12366,24 @@ input {
       top: 21px;
       width: 12px; }
 
+.navbar-block-width {
+  max-width: calc(100% - 164px - 40px); }
+
+.navbar-block-sections {
+  max-width: 100%; }
+
+.sections-menu-nav-new {
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+  overflow: hidden;
+  max-width: calc(100% - 34px); }
+
+.sections-menu-nav-new .nav-item:not(.is--visible) {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none; }
+
 .sections-menu-new {
   position: relative;
   margin-left: auto; }
@@ -12427,9 +12445,8 @@ input {
     display: block;
     margin: 0;
     list-style: none; }
-    @media screen and (min-width: 1280px) {
-      .sections-menu-new__list-item--tablet {
-        display: none; } }
+    .sections-menu-new__list-item.is--hidden {
+      display: none; }
   .sections-menu-new__list-link {
     display: block;
     padding: 11.5px 20px;
@@ -12463,10 +12480,23 @@ input {
           align-items: flex-end;
   padding: 20px;
   background: #F9F9F9; }
+  @media screen and (max-width: 767px) {
+    .new-exchange-rates {
+      margin: 0 -20px;
+      padding: 15px 20px;
+      width: calc(100% + 40px); } }
   .new-exchange-rates__item {
     width: calc(50% - 10px); }
     .new-exchange-rates__item:nth-child(2n) {
       margin-left: 20px; }
+    @media screen and (max-width: 767px) {
+      .new-exchange-rates__item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; } }
   .new-exchange-rates__help {
     display: block;
     width: -webkit-fit-content;
@@ -12476,6 +12506,10 @@ input {
     font-weight: normal;
     line-height: 1.33846;
     color: #858C95; }
+    @media screen and (max-width: 767px) {
+      .new-exchange-rates__help {
+        font-size: 14px;
+        line-height: 1.24999999; } }
   .new-exchange-rates__value {
     display: block;
     width: -webkit-fit-content;
@@ -12489,6 +12523,13 @@ input {
         color: #28A745; }
       .new-exchange-rates__value span.red {
         color: #EB5757; }
+    @media screen and (max-width: 767px) {
+      .new-exchange-rates__value {
+        margin-left: 10px;
+        font-size: 14px;
+        line-height: 1.24999999; }
+        .new-exchange-rates__value span {
+          margin-left: 4px; } }
 
 .content-link-new {
   text-decoration: underline;
@@ -12600,6 +12641,27 @@ input {
     font-weight: normal;
     line-height: 1.24;
     color: #FF4949; }
+
+.media-status-primary {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  z-index: 5;
+  display: block;
+  padding: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.24;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(4, 47, 96, 0.5); }
+  @media screen and (max-width: 767px) {
+    .media-status-primary {
+      top: 15px;
+      left: 15px; } }
 
 .opacity-50 {
   opacity: 0.5; }
