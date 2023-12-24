@@ -12373,6 +12373,10 @@ input {
     @media screren and (hover: hover) {
       .bg-check.background--dark a:hover {
         color: #042F60 !important; } }
+  .bg-check.background--dark .btn-group-regions .region-arrow .selected {
+    color: #fff !important; }
+  .bg-check.background--dark .new-hamburger__inner {
+    background: #fff !important; }
 
 .editorial-material-new {
   position: relative;
