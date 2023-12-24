@@ -1168,6 +1168,8 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', () => {
         if (pageBg) {
             onPagebgHeight()
+            
+            BackgroundCheck.refresh();
         }
     })
 })

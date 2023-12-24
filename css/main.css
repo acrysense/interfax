@@ -12366,12 +12366,12 @@ input {
 
 .bg-check.background--dark {
   color: #fff !important; }
-  .bg-check.background--dark > a {
+  .bg-check.background--dark a {
     color: #fff !important; }
-    .bg-check.background--dark > a:hover {
+    .bg-check.background--dark a:hover {
       color: #fff !important; }
     @media screren and (hover: hover) {
-      .bg-check.background--dark > a:hover {
+      .bg-check.background--dark a:hover {
         color: #042F60 !important; } }
 
 .editorial-material-new {
