@@ -807,7 +807,6 @@ $(function(e) {
   });
 
   // scroll
-  // scroll
   let prevScrollpos = window.pageYOffset;
   const product = document.querySelectorAll('.fixed-scroll-new')
   let coordOffsetLeftBottom = 0 // Fixed block on bottom position
@@ -1119,3 +1118,12 @@ $(function(e) {
     productScroll()
   })
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    // background
+    BackgroundCheck.init({
+        targets: '.bg-check',
+        images: '.page-bg-new__img'
+    });
+    console.log('true')
+})

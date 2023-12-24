@@ -79,36 +79,50 @@
   <!-- /Top menu end-->
 
   <!-- Main menu -->
-  <div class="container-fluid navbar-container d-none d-lg-block px-0" id="main-menu">
+  <div class="container-fluid navbar-container d-none d-lg-block px-0 bg-check" id="main-menu">
     <div class="container">
-      <nav class="navbar p-0">
-        <a class="navbar-brand" href="pages-list.html"></a>
-        <div>
+      <nav class="navbar navbar--nowrap p-0">
+        <a class="navbar-brand navbar-brand--img" href="pages-list.html">
+          <img src="img/logotype-realty.svg" alt="Interfax Недвижимость">
+        </a>
+        <div class="navbar-block-relative navbar-block-width">
           <!-- Regions menu 1280-->
           <ul class="navbar-nav nav-regions flex-row d-none d-xl-flex">
             <li class="nav-item">
-              <a class="nav-link pl-0" href="region.html">Москва</a>
+              <a class="nav-link pl-0" href="region.html">Новости</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="region.html">Центр</a>
+              <a class="nav-link" href="region.html">Аналитика</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="region.html">Северо-Запад</a>
+              <a class="nav-link" href="region.html">Эксперты</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="region.html">Юг и Северный Кавказ</a>
+              <a class="nav-link" href="region.html">Проекты</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="region.html">Поволжье</a>
+              <a class="nav-link" href="region.html">События</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="region.html">Урал</a>
+            <li class="d-none d-xl-flex ml-auto">
+              <a class="btn-nav-search btn-nav-search--top" href="#" data-event="showSearchField" data-target="#section-menu-search">
+                <svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find"></use>
+                </svg>
+                </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="region.html">Сибирь</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="region.html">Дальний Восток</a>
+            <li>
+              <!-- Search field -->
+              <div class="input-menu-search" id="section-menu-search">
+                <form>
+                  <div class="input-group input-group-search">
+                    <input type="text" class="form-control" placeholder="Поиск" aria-label="Поиск">
+                    <a class="btn-close"><svg style="fill:none" width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close-gray"></use></svg></a>
+                    <div class="input-group-append d-none d-md-flex">
+                      <a class="btn" type="submit" id="button-addon2" ><svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find-white"></use></svg></a>
+                    </div>
+                  </div> <!-- /input-group -->
+                </form>
+              </div>
+              <!-- /Search end-->
             </li>
           </ul>
           <!-- /Regions menu 1280 end-->
@@ -137,79 +151,92 @@
                   </div>
                 </div>
               </li>
-              <li class="btn-nav-search-wrap">
-                <a class="d-block btn-nav-search border-left-0" href="#" data-event="showSearchField" data-target="#region-menu-search">
-                  <svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find"></use></svg>
-                </a>
-              </li>
-              <li class="">
-                <!-- Search field -->
-                <div class="input-menu-search input-menu-search-md" id="region-menu-search">
-                  <form>
-                    <div class="input-group input-group-search">
-                      <input type="text" class="form-control" placeholder="Поиск" aria-label="Поиск">
-                      <a class="btn-close"><svg style="fill:none" width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close-gray"></use></svg></a>
-                      <div class="input-group-append d-none d-md-flex">
-                        <a class="btn" type="submit" id="button-addon2" ><svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find-white"></use></svg></a>
-                      </div>
-                    </div> <!-- /input-group -->
-                  </form>
-                </div>
-                <!-- /Search end-->
-              </li>
             </ul>
             <a class="nav-link pr-0 btn-green text-nowrap" href="#">Вход для подписчиков</a>
           </div> <!-- /nav-regions-dropdown -->
           <!-- /Regions menu 1024 end-->
   
           <!-- Sections menu-->
-          <div class="d-flex align-items-center">
-            <ul class="navbar-nav nav-sections">
+          <div class="d-flex align-items-center navbar-block-sections">
+            <ul class="navbar-nav nav-sections sections-menu-nav-new">
               <li class="nav-item">
-                <a class="nav-link pl-0" href="all-main-events.html">Главные события</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="all-news.html">Новости</a>
+                <a class="nav-link pl-0" href="all-main-events.html">ПМЭФ-2023</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="all-exclusive.html">Эксклюзив</a>
+                <a class="nav-link" href="all-news.html">Восстановление крымского моста</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="all-viewpoints.html">Точка зрения</a>
+                <a class="nav-link" href="all-exclusive.html">Реновация жилья</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="press-center.html">Пресс-центр</a>
+                <a class="nav-link" href="all-viewpoints.html">Санкции в строительстве и их последствия</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link pr-0" href="all-photoreports.html">Фоторепортажи</a>
+                <a class="nav-link" href="press-center.html">Крым</a>
               </li>
-              <li class="d-none d-xl-flex">
-                <a class="d-block btn-nav-search" href="#" data-event="showSearchField" data-target="#section-menu-search">
-                  <svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find"></use>
-                  </svg>
-                  </a>
+              <li class="nav-item">
+                <a class="nav-link pr-0" href="#">Москва</a>
               </li>
-              <li>
-                <!-- Search field -->
-                <div class="input-menu-search" id="section-menu-search">
-                  <form>
-                    <div class="input-group input-group-search">
-                      <input type="text" class="form-control" placeholder="Поиск" aria-label="Поиск">
-                      <a class="btn-close"><svg style="fill:none" width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close-gray"></use></svg></a>
-                      <div class="input-group-append d-none d-md-flex">
-                        <a class="btn" type="submit" id="button-addon2" ><svg style="fill:none" width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-find-white"></use></svg></a>
-                      </div>
-                    </div> <!-- /input-group -->
-                  </form>
-                </div>
-                <!-- /Search end-->
+              <li class="nav-item">
+                <a class="nav-link pr-0" href="#">Меры поддержки</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pr-0" href="#">Аренда</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pr-0" href="#">город будущего </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pr-0" href="#">ипотека в москве и московской области</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pr-0" href="#">Новостройки</a>
               </li>
             </ul>
-            <ul class="navbar-nav flex-row ml-20 align-items-center d-none d-xl-flex">
-              <li class="">
-                <a class="nav-link pr-0 btn-green" href="#">Вход для подписчиков</a>
-              </li>
-            </ul>
+            <div class="sections-menu-new">
+              <button class="new-hamburger" aria-label="Меню">
+                <span class="new-hamburger__inner"></span>
+                <span class="new-hamburger__inner"></span>
+                <span class="new-hamburger__inner"></span>
+              </button>
+              <div class="sections-menu-new__dropdown">
+                <ul class="sections-menu-new__list">
+                  <li class="sections-menu-new__list-item">
+                    <a class="sections-menu-new__list-link" href="#">ПМЭФ-2023</a>
+                  </li>
+                  <li class="sections-menu-new__list-item">
+                    <a class="sections-menu-new__list-link" href="#">Восстановление крымского моста</a>
+                  </li>
+                  <li class="sections-menu-new__list-item">
+                    <a class="sections-menu-new__list-link" href="#">Реновация жилья</a>
+                  </li>
+                  <li class="sections-menu-new__list-item">
+                    <a class="sections-menu-new__list-link" href="#">Санкции в строительстве и их последствия</a>
+                  </li>
+                  <li class="sections-menu-new__list-item">
+                    <a class="sections-menu-new__list-link" href="#">Крым</a>
+                  </li>
+                  <li class="sections-menu-new__list-item">
+                    <a class="sections-menu-new__list-link" href="#">Москва</a>
+                  </li>
+                  <li class="sections-menu-new__list-item">
+                    <a class="sections-menu-new__list-link" href="#">Меры поддержки</a>
+                  </li>
+                  <li class="sections-menu-new__list-item">
+                    <a class="sections-menu-new__list-link" href="#">Аренда</a>
+                  </li>
+                  <li class="sections-menu-new__list-item">
+                    <a class="sections-menu-new__list-link" href="#">город будущего </a>
+                  </li>
+                  <li class="sections-menu-new__list-item">
+                    <a class="sections-menu-new__list-link" href="#">ипотека в москве и московской области</a>
+                  </li>
+                  <li class="sections-menu-new__list-item">
+                    <a class="sections-menu-new__list-link" href="#">Новостройки</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <!-- /Sections menu end-->
         </div>
@@ -907,7 +934,7 @@
 </header>
 
 <picture class="page-bg-new">
-    <img src="img/new-story-bg.jpg" alt="Image">
+    <img src="./img/new-story-bg.jpg" alt="Image" class="page-bg-new__img">
 </picture>
 
 <!-- Content -->
@@ -1151,6 +1178,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/moment.min.js"></script>
 <script src="js/daterangepicker.js"></script>
+<script src="js/background-check.min.js"></script>
 <script src="js/script.js"></script>
 
 </body>
