@@ -12350,6 +12350,9 @@ input {
     -o-object-fit: cover;
        object-fit: cover; }
 
+.bg-check.background--dark {
+  color: #fff !important; }
+
 .editorial-material-new {
   position: relative;
   z-index: 1;
