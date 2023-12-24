@@ -217,8 +217,6 @@ $(function(e) {
 			popularListItemWidth = 0
 			popularListWidth = popularList.offsetWidth
 
-            console.log(popularListWidth)
-
 			popularListItem.forEach(item => {
 				item.classList.remove('is--visible')
 			})
@@ -227,7 +225,6 @@ $(function(e) {
 			})
 
 			for (let i = 0; i < popularListItem.length; i++) {
-                console.log((popularListItemWidth + popularListItem[i].offsetWidth), popularListWidth)
 				if ((popularListItemWidth + popularListItem[i].offsetWidth) <= popularListWidth) {
 					popularListItemWidth += popularListItem[i].offsetWidth;
 					popularListItem[i].classList.add('is--visible');
@@ -863,7 +860,6 @@ $(function(e) {
                             if (item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height != item.getBoundingClientRect().height) {
                                 // for left
                                 if (item.querySelector('.fixed-scroll-new-left').classList.contains('product__fixed--active')) { // Если при фиксированном блоке скроллим вверх - убираем фиксацию
-                                    console.log('fixed-1')
                                     item.querySelector('.fixed-scroll-new-left').classList.remove('product__fixed--active')
                                     item.querySelector('.fixed-scroll-new-left').classList.add('product__fixed--bottom')
                                     item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
@@ -872,7 +868,6 @@ $(function(e) {
                                 }
             
                                 if (window.pageYOffset <= (getCoords(item.querySelector('.fixed-scroll-new-left')).top - Number(107)) && item.querySelector('.fixed-scroll-new-left').classList.contains('product__fixed--bottom')) { // Если проскроллили до верха блока - фиксируем
-                                    console.log('fixed-2')
                                     item.querySelector('.fixed-scroll-new-left').classList.add('product__fixed--top')
                                     item.querySelector('.fixed-scroll-new-left').style.position = 'fixed'
                                     item.querySelector('.fixed-scroll-new-left').style.top = '107px'
@@ -880,7 +875,6 @@ $(function(e) {
                                 }
             
                                 if (window.pageYOffset <= (item.offsetTop - Number(107)) && item.querySelector('.fixed-scroll-new-left').classList.contains('product__fixed--top')) {
-                                    console.log('fixed-3')
                                     item.querySelector('.fixed-scroll-new-left').classList.remove('product__fixed--top')
                                     item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
                                     item.querySelector('.fixed-scroll-new-left').style.top = '0px'
@@ -891,7 +885,7 @@ $(function(e) {
                             if (item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height != item.getBoundingClientRect().height) {
                                 // for center
                                 if (item.querySelector('.fixed-scroll-new-center').classList.contains('product__fixed--active')) { // Если при фиксированном блоке скроллим вверх - убираем фиксацию
-                                    console.log('fixed-1')
+                                    // console.log('fixed-1')
                                     item.querySelector('.fixed-scroll-new-center').classList.remove('product__fixed--active')
                                     item.querySelector('.fixed-scroll-new-center').classList.add('product__fixed--bottom')
                                     item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
@@ -900,7 +894,7 @@ $(function(e) {
                                 }
             
                                 if (window.pageYOffset <= (getCoords(item.querySelector('.fixed-scroll-new-center')).top - Number(107)) && item.querySelector('.fixed-scroll-new-center').classList.contains('product__fixed--bottom')) { // Если проскроллили до верха блока - фиксируем
-                                    console.log('fixed-2')
+                                    // console.log('fixed-2')
                                     item.querySelector('.fixed-scroll-new-center').classList.add('product__fixed--top')
                                     item.querySelector('.fixed-scroll-new-center').style.position = 'fixed'
                                     item.querySelector('.fixed-scroll-new-center').style.top = '107px'
@@ -908,7 +902,7 @@ $(function(e) {
                                 }
             
                                 if (window.pageYOffset <= (item.offsetTop - Number(107)) && item.querySelector('.fixed-scroll-new-center').classList.contains('product__fixed--top')) {
-                                    console.log('fixed-3')
+                                    // console.log('fixed-3')
                                     item.querySelector('.fixed-scroll-new-center').classList.remove('product__fixed--top')
                                     item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
                                     item.querySelector('.fixed-scroll-new-center').style.top = '0px'
@@ -1104,9 +1098,19 @@ $(function(e) {
             }
             prevScrollpos = currentScrollPos;
         } else {
-            fixedScrollNewRight.style.position = 'relative'
-            fixedScrollNewRight.style.top = '0px'
-            fixedScrollNewRight.style.transform = 'translate3d(0px, 0px, 0px)'
+            product.forEach(item => {
+                item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
+                item.querySelector('.fixed-scroll-new-left').style.top = '0px'
+                item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, 0px, 0px)'
+
+                item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
+                item.querySelector('.fixed-scroll-new-center').style.top = '0px'
+                item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, 0px, 0px)'
+
+                item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
+                item.querySelector('.fixed-scroll-new-right').style.top = '0px'
+                item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, 0px, 0px)'
+            })
         }
     }
   }
