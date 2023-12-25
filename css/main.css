@@ -9330,8 +9330,14 @@ a.text-blue-light:focus, a.text-blue-light:hover {
         background-image: url(../img/logotype-realty-mobile-white.svg); }
       .scroll-menu--blur:not(.active) .navbar-toggler-icon {
         background-image: url(../img/icon-hamburger-white.svg); }
+      .scroll-menu--blur:not(.active) .btn-nav-search .default {
+        display: none; }
     .scroll-menu--blur.show {
-      background: #fff; } }
+      background: #fff; }
+    .scroll-menu--blur.active .btn-nav-search .white {
+      display: none; }
+    .scroll-menu--blur.active .btn-nav-search .default {
+      display: inline; } }
 
 @media (max-width: 1023px) {
   .scroll-menu {
@@ -10284,7 +10290,7 @@ footer {
   width: 24px;
   height: 20px;
   display: block;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMiIgZmlsbD0iYmxhY2siLz48cmVjdCB5PSI4IiB3aWR0aD0iMjQiIGhlaWdodD0iMiIgZmlsbD0iYmxhY2siLz48cmVjdCB5PSIxNiIgd2lkdGg9IjI0IiBoZWlnaHQ9IjIiIGZpbGw9ImJsYWNrIi8+PC9zdmc+"); }
+  background-image: url(../img/icon-hamburger.svg); }
 
 .navbar-scroll {
   padding: 22px 0; }
