@@ -210,12 +210,14 @@ $(function(e) {
 	const popularListDropdown = document.querySelectorAll('.sections-menu-new__list > .sections-menu-new__list-item')
 
 	let popularListWidth = 0
+	let popularListWidthAll = 0
 	let popularListItemWidth = 0
 
 	function popularListDropdowns() {
 		if (popularList && popularListItem && popularListDropdown) {
-			popularListItemWidth = 0
 			popularListWidth = popularList.offsetWidth
+            popularListWidthAll = 0
+			popularListItemWidth = 0
 
 			popularListItem.forEach(item => {
 				item.classList.remove('is--visible')
@@ -233,6 +235,14 @@ $(function(e) {
 					break;
 				}
 			}
+
+            popularListItem.forEach(item => {
+                popularListWidthAll += item.offsetWidth
+            })
+
+            if (popularListWidthAll <= popularListWidth) {
+                document.querySelector('.navbar-block-sections .sections-menu-new').style.display = 'none'
+            }
 		}
 	}
 
@@ -815,6 +825,7 @@ $(function(e) {
   let coordOffsetLeftTop = 0 // Fixed block on offsetop position
   let coordOffsetCenterTop = 0 // Fixed block on offsetop position
   let coordOffsetRightTop = 0 // Fixed block on offsetop position
+  let coordOffsetMenuList = 0 // Fixed block on offsetop position
 
   function getCoords(elem) {
       let box = elem.getBoundingClientRect();
@@ -846,276 +857,394 @@ $(function(e) {
             return false;
         };
     };
+    
+    function columnFixedOnScrollUp() {
+        product.forEach(item => {
+            if (Visible (item)) {
+                if (window.innerWidth >= 1280) {
+                    if (item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height != item.getBoundingClientRect().height) {
+                        // for left
+                        if (item.querySelector('.fixed-scroll-new-left').classList.contains('is--active')) { // Если при фиксированном блоке скроллим вверх - убираем фиксацию
+                            item.querySelector('.fixed-scroll-new-left').classList.remove('is--active')
+                            item.querySelector('.fixed-scroll-new-left').classList.add('is--bottom')
+                            item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
+                            item.querySelector('.fixed-scroll-new-left').style.top = '0px'
+                            item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, ' + coordOffsetLeftTop + 'px, 0px)'
+                        }
+    
+                        if (window.pageYOffset <= (getCoords(item.querySelector('.fixed-scroll-new-left')).top - Number(107)) && item.querySelector('.fixed-scroll-new-left').classList.contains('is--bottom')) { // Если проскроллили до верха блока - фиксируем
+                            item.querySelector('.fixed-scroll-new-left').classList.add('is--top')
+                            item.querySelector('.fixed-scroll-new-left').style.position = 'fixed'
+                            item.querySelector('.fixed-scroll-new-left').style.top = '107px'
+                            item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, 0px, 0px)'
+                        }
+    
+                        if (window.pageYOffset <= (item.offsetTop - Number(107)) && item.querySelector('.fixed-scroll-new-left').classList.contains('is--top')) {
+                            item.querySelector('.fixed-scroll-new-left').classList.remove('is--top')
+                            item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
+                            item.querySelector('.fixed-scroll-new-left').style.top = '0px'
+                            item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, 0px, 0px)'
+                        }
+                    }
 
-  function productScroll() {
+                    if (item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height != item.getBoundingClientRect().height) {
+                        // for center
+                        if (item.querySelector('.fixed-scroll-new-center').classList.contains('is--active')) { // Если при фиксированном блоке скроллим вверх - убираем фиксацию
+                            // console.log('fixed-1')
+                            item.querySelector('.fixed-scroll-new-center').classList.remove('is--active')
+                            item.querySelector('.fixed-scroll-new-center').classList.add('is--bottom')
+                            item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
+                            item.querySelector('.fixed-scroll-new-center').style.top = '0px'
+                            item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, ' + coordOffsetCenterTop + 'px, 0px)'
+                        }
+    
+                        if (window.pageYOffset <= (getCoords(item.querySelector('.fixed-scroll-new-center')).top - Number(107)) && item.querySelector('.fixed-scroll-new-center').classList.contains('is--bottom')) { // Если проскроллили до верха блока - фиксируем
+                            // console.log('fixed-2')
+                            item.querySelector('.fixed-scroll-new-center').classList.add('is--top')
+                            item.querySelector('.fixed-scroll-new-center').style.position = 'fixed'
+                            item.querySelector('.fixed-scroll-new-center').style.top = '107px'
+                            item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, 0px, 0px)'
+                        }
+    
+                        if (window.pageYOffset <= (item.offsetTop - Number(107)) && item.querySelector('.fixed-scroll-new-center').classList.contains('is--top')) {
+                            // console.log('fixed-3')
+                            item.querySelector('.fixed-scroll-new-center').classList.remove('is--top')
+                            item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
+                            item.querySelector('.fixed-scroll-new-center').style.top = '0px'
+                            item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, 0px, 0px)'
+                        }
+                    }
+                }
+
+                if (item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height != item.getBoundingClientRect().height) {
+                    // for right
+                    if (item.querySelector('.fixed-scroll-new-right').classList.contains('is--active')) { // Если при фиксированном блоке скроллим вверх - убираем фиксацию
+                        item.querySelector('.fixed-scroll-new-right').classList.remove('is--active')
+                        item.querySelector('.fixed-scroll-new-right').classList.add('is--bottom')
+                        item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
+                        item.querySelector('.fixed-scroll-new-right').style.top = '0px'
+                        item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, ' + coordOffsetRightTop + 'px, 0px)'
+                    }
+
+                    if (window.pageYOffset <= (getCoords(item.querySelector('.fixed-scroll-new-right')).top - Number(107)) && item.querySelector('.fixed-scroll-new-right').classList.contains('is--bottom')) { // Если проскроллили до верха блока - фиксируем
+                        item.querySelector('.fixed-scroll-new-right').classList.add('is--top')
+                        item.querySelector('.fixed-scroll-new-right').style.position = 'fixed'
+                        item.querySelector('.fixed-scroll-new-right').style.top = '107px'
+                        item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, 0px, 0px)'
+                    }
+
+                    if (window.pageYOffset <= (item.offsetTop - Number(107)) && item.querySelector('.fixed-scroll-new-right').classList.contains('is--top')) {
+                        item.querySelector('.fixed-scroll-new-right').classList.remove('is--top')
+                        item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
+                        item.querySelector('.fixed-scroll-new-right').style.top = '0px'
+                        item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, 0px, 0px)'
+                    }
+                }
+            }
+        })
+    }
+
+    function columnFixedOnScrollDown() {
+        product.forEach(item => {
+            if (Visible (item)) {
+                coordOffsetLeftTop = getCoords(item.querySelector('.fixed-scroll-new-left')).top - item.offsetTop
+                coordOffsetCenterTop = getCoords(item.querySelector('.fixed-scroll-new-center')).top - item.offsetTop
+                coordOffsetRightTop = getCoords(item.querySelector('.fixed-scroll-new-right')).top - item.offsetTop
+
+                if (window.innerWidth >= 1280) {
+                    if (item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height != item.getBoundingClientRect().height) {
+                        // for left
+                        if (item.querySelector('.fixed-scroll-new-left').classList.contains('is--top')) {
+                            item.querySelector('.fixed-scroll-new-left').classList.remove('is--top')
+                            item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
+                            item.querySelector('.fixed-scroll-new-left').style.top = '0px'
+                            item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, ' + coordOffsetLeftTop + 'px, 0px)'
+                        }
+                        
+                        if (item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height <= (document.documentElement.clientHeight - Number(107))) {
+                            if (window.pageYOffset >= (getCoords(item.querySelector('.fixed-scroll-new-left')).top - Number(107))) {
+                                item.querySelector('.fixed-scroll-new-left').classList.add('is--active')
+                                item.querySelector('.fixed-scroll-new-left').style.position = 'fixed'
+                                item.querySelector('.fixed-scroll-new-left').style.top = '107px'
+                                item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, 0px, 0px)'
+                            }
+
+                            if (window.pageYOffset >= (item.offsetTop + (item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height) - Number(107))) {
+                                let transformFixedBottom = item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height
+        
+                                item.querySelector('.fixed-scroll-new-left').classList.remove('is--active')
+                                item.querySelector('.fixed-scroll-new-left').classList.add('is--bottom')
+                                item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
+                                item.querySelector('.fixed-scroll-new-left').style.top = '0px'
+                                item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
+                            }
+                        } else {
+                            if (window.pageYOffset >= getCoords(item.querySelector('.fixed-scroll-new-left')).top + item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height - (document.documentElement.clientHeight - Number(30)) && !item.querySelector('.fixed-scroll-new-left').classList.contains('is--active')) {
+                                if (!((window.pageYOffset - item.offsetTop) - Number(30) >= item.getBoundingClientRect().height - document.documentElement.clientHeight)) {
+                                    coordOffsetLeftBottom = (window.pageYOffset - item.offsetTop) - item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height + window.innerHeight - 30
+                                }
+            
+                                item.querySelector('.fixed-scroll-new-left').classList.add('is--active')
+                                item.querySelector('.fixed-scroll-new-left').style.position = 'fixed'
+                                item.querySelector('.fixed-scroll-new-left').style.top = document.documentElement.clientHeight - Number(30) + 'px'
+                                item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, -100%, 0px)'
+                            }
+                            if ((window.pageYOffset - item.offsetTop) - Number(30) >= item.getBoundingClientRect().height - document.documentElement.clientHeight) {
+                                let transformFixedBottom = item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height
+            
+                                item.querySelector('.fixed-scroll-new-left').classList.remove('is--active')
+                                item.querySelector('.fixed-scroll-new-left').classList.add('is--bottom')
+                                item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
+                                item.querySelector('.fixed-scroll-new-left').style.top = '0px'
+                                item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
+                            }
+                        }
+                    }
+
+                    if (item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height != item.getBoundingClientRect().height) {
+                        // for center
+                        if (item.querySelector('.fixed-scroll-new-center').classList.contains('is--top')) {
+                            item.querySelector('.fixed-scroll-new-center').classList.remove('is--top')
+                            item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
+                            item.querySelector('.fixed-scroll-new-center').style.top = '0px'
+                            item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, ' + coordOffsetCenterTop + 'px, 0px)'
+                        }
+                        
+                        if (item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height <= (document.documentElement.clientHeight - Number(107))) {
+                            if (window.pageYOffset >= (getCoords(item.querySelector('.fixed-scroll-new-center')).top - Number(107))) {
+                                item.querySelector('.fixed-scroll-new-center').classList.add('is--active')
+                                item.querySelector('.fixed-scroll-new-center').style.position = 'fixed'
+                                item.querySelector('.fixed-scroll-new-center').style.top = '107px'
+                                item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, 0px, 0px)'
+                            }
+
+                            if (window.pageYOffset >= (item.offsetTop + (item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height) - Number(107))) {
+                                let transformFixedBottom = item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height
+        
+                                item.querySelector('.fixed-scroll-new-center').classList.remove('is--active')
+                                item.querySelector('.fixed-scroll-new-center').classList.add('is--bottom')
+                                item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
+                                item.querySelector('.fixed-scroll-new-center').style.top = '0px'
+                                item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
+                            }
+                        } else {
+                            if (window.pageYOffset >= getCoords(item.querySelector('.fixed-scroll-new-center')).top + item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height - (document.documentElement.clientHeight - Number(30)) && !item.querySelector('.fixed-scroll-new-center').classList.contains('is--active')) {
+                                if (!((window.pageYOffset - item.offsetTop) - Number(30) >= item.getBoundingClientRect().height - document.documentElement.clientHeight)) {
+                                    coordOffsetCenterBottom = (window.pageYOffset - item.offsetTop) - item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height + window.innerHeight - 30
+                                }
+            
+                                item.querySelector('.fixed-scroll-new-center').classList.add('is--active')
+                                item.querySelector('.fixed-scroll-new-center').style.position = 'fixed'
+                                item.querySelector('.fixed-scroll-new-center').style.top = document.documentElement.clientHeight - Number(30) + 'px'
+                                item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, -100%, 0px)'
+                            }
+                            if ((window.pageYOffset - item.offsetTop) - Number(30) >= item.getBoundingClientRect().height - document.documentElement.clientHeight) {
+                                let transformFixedBottom = item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height
+            
+                                item.querySelector('.fixed-scroll-new-center').classList.remove('is--active')
+                                item.querySelector('.fixed-scroll-new-center').classList.add('is--bottom')
+                                item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
+                                item.querySelector('.fixed-scroll-new-center').style.top = '0px'
+                                item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
+                            }
+                        }
+                    }
+                }
+
+                if (item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height != item.getBoundingClientRect().height) {
+                    // for right
+                    if (item.querySelector('.fixed-scroll-new-right').classList.contains('is--top')) {
+                        item.querySelector('.fixed-scroll-new-right').classList.remove('is--top')
+                        item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
+                        item.querySelector('.fixed-scroll-new-right').style.top = '0px'
+                        item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, ' + coordOffsetRightTop + 'px, 0px)'
+                    }
+
+                    if (item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height <= (document.documentElement.clientHeight - Number(107))) {
+                        if (window.pageYOffset >= (getCoords(item.querySelector('.fixed-scroll-new-right')).top - Number(107))) {
+                            item.querySelector('.fixed-scroll-new-right').classList.add('is--active')
+                            item.querySelector('.fixed-scroll-new-right').style.position = 'fixed'
+                            item.querySelector('.fixed-scroll-new-right').style.top = '107px'
+                            item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, 0px, 0px)'
+                        }
+
+                        if (window.pageYOffset >= (item.offsetTop + (item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height) - Number(107))) {
+                            let transformFixedBottom = item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height
+    
+                            item.querySelector('.fixed-scroll-new-right').classList.remove('is--active')
+                            item.querySelector('.fixed-scroll-new-right').classList.add('is--bottom')
+                            item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
+                            item.querySelector('.fixed-scroll-new-right').style.top = '0px'
+                            item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
+                        }
+                    } else {
+                        if (window.pageYOffset >= getCoords(item.querySelector('.fixed-scroll-new-right')).top + item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height - (document.documentElement.clientHeight - Number(30)) && !item.querySelector('.fixed-scroll-new-right').classList.contains('is--active')) {
+                            if (!((window.pageYOffset - item.offsetTop) - Number(30) >= item.getBoundingClientRect().height - document.documentElement.clientHeight)) {
+                                coordOffsetRightBottom = (window.pageYOffset - item.offsetTop) - item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height + window.innerHeight - 30
+                            }
+    
+                            item.querySelector('.fixed-scroll-new-right').classList.add('is--active')
+                            item.querySelector('.fixed-scroll-new-right').style.position = 'fixed'
+                            item.querySelector('.fixed-scroll-new-right').style.top = document.documentElement.clientHeight - Number(30) + 'px'
+                            item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, -100%, 0px)'
+                        }
+
+                        if ((window.pageYOffset - item.offsetTop) - Number(30) >= item.getBoundingClientRect().height - document.documentElement.clientHeight) {
+                            let transformFixedBottom = item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height
+    
+                            item.querySelector('.fixed-scroll-new-right').classList.remove('is--active')
+                            item.querySelector('.fixed-scroll-new-right').classList.add('is--bottom')
+                            item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
+                            item.querySelector('.fixed-scroll-new-right').style.top = '0px'
+                            item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
+                        }
+                    }
+                }
+            }
+        })
+    }
+
+    function columnFixedOnScrollReset() {
+        product.forEach(item => {
+            item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
+            item.querySelector('.fixed-scroll-new-left').style.top = '0px'
+            item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, 0px, 0px)'
+
+            item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
+            item.querySelector('.fixed-scroll-new-center').style.top = '0px'
+            item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, 0px, 0px)'
+
+            item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
+            item.querySelector('.fixed-scroll-new-right').style.top = '0px'
+            item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, 0px, 0px)'
+        })
+    }
+
+    function listMenuOnScrollUp() {
+        if (document.querySelector('#list-menu')) {
+            if (Visible (document.querySelector('#list-menu'))) {
+                if (window.innerWidth >= 1280) {
+                    if (document.querySelector('#list-menu').getBoundingClientRect().height != document.querySelector('.list-menu-scroll-container').getBoundingClientRect().height) {
+                        if (document.querySelector('#list-menu').classList.contains('is--active')) { // Если при фиксированном блоке скроллим вверх - убираем фиксацию
+                            document.querySelector('#list-menu').classList.remove('is--active')
+                            document.querySelector('#list-menu').classList.add('is--bottom')
+                            document.querySelector('#list-menu').style.position = 'relative'
+                            document.querySelector('#list-menu').style.top = '0px'
+                            document.querySelector('#list-menu').style.transform = 'translate3d(0px, ' + coordOffsetMenuList + 'px, 0px)'
+                        }
+    
+                        if (window.pageYOffset <= (getCoords(document.querySelector('#list-menu')).top - Number(107)) && document.querySelector('#list-menu').classList.contains('is--bottom')) { // Если проскроллили до верха блока - фиксируем
+                            document.querySelector('#list-menu').classList.add('is--top')
+                            document.querySelector('#list-menu').style.position = 'fixed'
+                            document.querySelector('#list-menu').style.top = '107px'
+                            document.querySelector('#list-menu').style.transform = 'translate3d(0px, 0px, 0px)'
+                        }
+    
+                        if (window.pageYOffset <= (document.querySelector('.list-menu-scroll-container').offsetTop - Number(107)) && document.querySelector('#list-menu').classList.contains('is--top')) {
+                            document.querySelector('#list-menu').classList.remove('is--top')
+                            document.querySelector('#list-menu').style.position = 'relative'
+                            document.querySelector('#list-menu').style.top = '0px'
+                            document.querySelector('#list-menu').style.transform = 'translate3d(0px, 0px, 0px)'
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    function listMenuOnScrollDown() {
+        if (document.querySelector('#list-menu')) {
+            if (Visible (document.querySelector('#list-menu'))) {
+                coordOffsetMenuList = getCoords(document.querySelector('#list-menu')).top - document.querySelector('.list-menu-scroll-container').offsetTop
+
+                if (window.innerWidth >= 1280) {
+                    if (document.querySelector('#list-menu').getBoundingClientRect().height != document.querySelector('.list-menu-scroll-container').getBoundingClientRect().height) {
+                        if (document.querySelector('#list-menu').classList.contains('is--top')) {
+                            document.querySelector('#list-menu').classList.remove('is--top')
+                            document.querySelector('#list-menu').style.position = 'relative'
+                            document.querySelector('#list-menu').style.top = '0px'
+                            document.querySelector('#list-menu').style.transform = 'translate3d(0px, ' + coordOffsetMenuList + 'px, 0px)'
+                        }
+                        
+                        if (document.querySelector('#list-menu').getBoundingClientRect().height <= (document.documentElement.clientHeight - Number(107))) {
+                            if (window.pageYOffset >= (getCoords(document.querySelector('#list-menu')).top - Number(107))) {
+                                document.querySelector('#list-menu').classList.add('is--active')
+                                document.querySelector('#list-menu').style.position = 'fixed'
+                                document.querySelector('#list-menu').style.top = '107px'
+                                document.querySelector('#list-menu').style.transform = 'translate3d(0px, 0px, 0px)'
+                            }
+
+                            if (window.pageYOffset >= (document.querySelector('.list-menu-scroll-container').offsetTop + (document.querySelector('.list-menu-scroll-container').getBoundingClientRect().height - document.querySelector('#list-menu').getBoundingClientRect().height) - Number(107))) {
+                                let transformFixedBottom = 0
+                                
+                                if (document.querySelector('.list-menu-scroll-left')) {
+                                    transformFixedBottom = document.querySelector('.list-menu-scroll-container').getBoundingClientRect().height - document.querySelector('#list-menu').getBoundingClientRect().height - document.querySelector('.list-menu-scroll-left').getBoundingClientRect().height
+                                } else {
+                                    transformFixedBottom = document.querySelector('.list-menu-scroll-container').getBoundingClientRect().height - document.querySelector('#list-menu').getBoundingClientRect().height
+                                }
+        
+                                document.querySelector('#list-menu').classList.remove('is--active')
+                                document.querySelector('#list-menu').classList.add('is--bottom')
+                                document.querySelector('#list-menu').style.position = 'relative'
+                                document.querySelector('#list-menu').style.top = '0px'
+                                document.querySelector('#list-menu').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
+                            }
+                        } else {
+                            if (window.pageYOffset >= getCoords(document.querySelector('#list-menu')).top + document.querySelector('#list-menu').getBoundingClientRect().height - (document.documentElement.clientHeight - Number(30)) && !document.querySelector('#list-menu').classList.contains('is--active')) {
+                                if (!((window.pageYOffset - document.querySelector('.list-menu-scroll-container').offsetTop) - Number(30) >= document.querySelector('.list-menu-scroll-container').getBoundingClientRect().height - document.documentElement.clientHeight)) {
+                                    coordOffsetLeftBottom = (window.pageYOffset - document.querySelector('.list-menu-scroll-container').offsetTop) - document.querySelector('#list-menu').getBoundingClientRect().height + window.innerHeight - 30
+                                }
+            
+                                document.querySelector('#list-menu').classList.add('is--active')
+                                document.querySelector('#list-menu').style.position = 'fixed'
+                                document.querySelector('#list-menu').style.top = document.documentElement.clientHeight - Number(30) + 'px'
+                                document.querySelector('#list-menu').style.transform = 'translate3d(0px, -100%, 0px)'
+                            }
+                            if ((window.pageYOffset - document.querySelector('.list-menu-scroll-container').offsetTop) - Number(30) >= document.querySelector('.list-menu-scroll-container').getBoundingClientRect().height - document.documentElement.clientHeight) {
+                                let transformFixedBottom = 0
+
+                                if (document.querySelector('.list-menu-scroll-left')) {
+                                    transformFixedBottom = document.querySelector('.list-menu-scroll-container').getBoundingClientRect().height - document.querySelector('#list-menu').getBoundingClientRect().height - document.querySelector('.list-menu-scroll-left').getBoundingClientRect().height
+                                } else {
+                                    transformFixedBottom = document.querySelector('.list-menu-scroll-container').getBoundingClientRect().height - document.querySelector('#list-menu').getBoundingClientRect().height
+                                }
+            
+                                document.querySelector('#list-menu').classList.remove('is--active')
+                                document.querySelector('#list-menu').classList.add('is--bottom')
+                                document.querySelector('#list-menu').style.position = 'relative'
+                                document.querySelector('#list-menu').style.top = '0px'
+                                document.querySelector('#list-menu').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+  function fixedColumnOnScroll() {
     if (product) {
         if (window.innerWidth >= 1024) {
             let currentScrollPos = window.pageYOffset;
 
             if (prevScrollpos > currentScrollPos || prevScrollpos <= 0) { // If up
-                product.forEach(item => {
-                    if (Visible (item)) {
-                        if (window.innerWidth >= 1280) {
-                            if (item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height != item.getBoundingClientRect().height) {
-                                // for left
-                                if (item.querySelector('.fixed-scroll-new-left').classList.contains('product__fixed--active')) { // Если при фиксированном блоке скроллим вверх - убираем фиксацию
-                                    item.querySelector('.fixed-scroll-new-left').classList.remove('product__fixed--active')
-                                    item.querySelector('.fixed-scroll-new-left').classList.add('product__fixed--bottom')
-                                    item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
-                                    item.querySelector('.fixed-scroll-new-left').style.top = '0px'
-                                    item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, ' + coordOffsetLeftTop + 'px, 0px)'
-                                }
-            
-                                if (window.pageYOffset <= (getCoords(item.querySelector('.fixed-scroll-new-left')).top - Number(107)) && item.querySelector('.fixed-scroll-new-left').classList.contains('product__fixed--bottom')) { // Если проскроллили до верха блока - фиксируем
-                                    item.querySelector('.fixed-scroll-new-left').classList.add('product__fixed--top')
-                                    item.querySelector('.fixed-scroll-new-left').style.position = 'fixed'
-                                    item.querySelector('.fixed-scroll-new-left').style.top = '107px'
-                                    item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, 0px, 0px)'
-                                }
-            
-                                if (window.pageYOffset <= (item.offsetTop - Number(107)) && item.querySelector('.fixed-scroll-new-left').classList.contains('product__fixed--top')) {
-                                    item.querySelector('.fixed-scroll-new-left').classList.remove('product__fixed--top')
-                                    item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
-                                    item.querySelector('.fixed-scroll-new-left').style.top = '0px'
-                                    item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, 0px, 0px)'
-                                }
-                            }
-
-                            if (item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height != item.getBoundingClientRect().height) {
-                                // for center
-                                if (item.querySelector('.fixed-scroll-new-center').classList.contains('product__fixed--active')) { // Если при фиксированном блоке скроллим вверх - убираем фиксацию
-                                    // console.log('fixed-1')
-                                    item.querySelector('.fixed-scroll-new-center').classList.remove('product__fixed--active')
-                                    item.querySelector('.fixed-scroll-new-center').classList.add('product__fixed--bottom')
-                                    item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
-                                    item.querySelector('.fixed-scroll-new-center').style.top = '0px'
-                                    item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, ' + coordOffsetCenterTop + 'px, 0px)'
-                                }
-            
-                                if (window.pageYOffset <= (getCoords(item.querySelector('.fixed-scroll-new-center')).top - Number(107)) && item.querySelector('.fixed-scroll-new-center').classList.contains('product__fixed--bottom')) { // Если проскроллили до верха блока - фиксируем
-                                    // console.log('fixed-2')
-                                    item.querySelector('.fixed-scroll-new-center').classList.add('product__fixed--top')
-                                    item.querySelector('.fixed-scroll-new-center').style.position = 'fixed'
-                                    item.querySelector('.fixed-scroll-new-center').style.top = '107px'
-                                    item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, 0px, 0px)'
-                                }
-            
-                                if (window.pageYOffset <= (item.offsetTop - Number(107)) && item.querySelector('.fixed-scroll-new-center').classList.contains('product__fixed--top')) {
-                                    // console.log('fixed-3')
-                                    item.querySelector('.fixed-scroll-new-center').classList.remove('product__fixed--top')
-                                    item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
-                                    item.querySelector('.fixed-scroll-new-center').style.top = '0px'
-                                    item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, 0px, 0px)'
-                                }
-                            }
-                        }
-
-                        if (item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height != item.getBoundingClientRect().height) {
-                            // for right
-                            if (item.querySelector('.fixed-scroll-new-right').classList.contains('product__fixed--active')) { // Если при фиксированном блоке скроллим вверх - убираем фиксацию
-                                item.querySelector('.fixed-scroll-new-right').classList.remove('product__fixed--active')
-                                item.querySelector('.fixed-scroll-new-right').classList.add('product__fixed--bottom')
-                                item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
-                                item.querySelector('.fixed-scroll-new-right').style.top = '0px'
-                                item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, ' + coordOffsetRightTop + 'px, 0px)'
-                            }
-        
-                            if (window.pageYOffset <= (getCoords(item.querySelector('.fixed-scroll-new-right')).top - Number(107)) && item.querySelector('.fixed-scroll-new-right').classList.contains('product__fixed--bottom')) { // Если проскроллили до верха блока - фиксируем
-                                item.querySelector('.fixed-scroll-new-right').classList.add('product__fixed--top')
-                                item.querySelector('.fixed-scroll-new-right').style.position = 'fixed'
-                                item.querySelector('.fixed-scroll-new-right').style.top = '107px'
-                                item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, 0px, 0px)'
-                            }
-        
-                            if (window.pageYOffset <= (item.offsetTop - Number(107)) && item.querySelector('.fixed-scroll-new-right').classList.contains('product__fixed--top')) {
-                                item.querySelector('.fixed-scroll-new-right').classList.remove('product__fixed--top')
-                                item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
-                                item.querySelector('.fixed-scroll-new-right').style.top = '0px'
-                                item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, 0px, 0px)'
-                            }
-                        }
-                    }
-                })
+                columnFixedOnScrollUp()
+                
+                listMenuOnScrollUp()
             } else { // If down
-                product.forEach(item => {
-                    if (Visible (item)) {
-                        coordOffsetLeftTop = getCoords(item.querySelector('.fixed-scroll-new-left')).top - item.offsetTop
-                        coordOffsetCenterTop = getCoords(item.querySelector('.fixed-scroll-new-center')).top - item.offsetTop
-                        coordOffsetRightTop = getCoords(item.querySelector('.fixed-scroll-new-right')).top - item.offsetTop
+                columnFixedOnScrollDown()
 
-                        if (window.innerWidth >= 1280) {
-                            if (item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height != item.getBoundingClientRect().height) {
-                                // for left
-                                if (item.querySelector('.fixed-scroll-new-left').classList.contains('product__fixed--top')) {
-                                    item.querySelector('.fixed-scroll-new-left').classList.remove('product__fixed--top')
-                                    item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
-                                    item.querySelector('.fixed-scroll-new-left').style.top = '0px'
-                                    item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, ' + coordOffsetLeftTop + 'px, 0px)'
-                                }
-                                
-                                if (item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height <= (document.documentElement.clientHeight - Number(107))) {
-                                    if (window.pageYOffset >= (getCoords(item.querySelector('.fixed-scroll-new-left')).top - Number(107))) {
-                                        item.querySelector('.fixed-scroll-new-left').classList.add('product__fixed--active')
-                                        item.querySelector('.fixed-scroll-new-left').style.position = 'fixed'
-                                        item.querySelector('.fixed-scroll-new-left').style.top = '107px'
-                                        item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, 0px, 0px)'
-                                    }
-
-                                    if (window.pageYOffset >= (item.offsetTop + (item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height) - Number(107))) {
-                                        let transformFixedBottom = item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height
-                
-                                        item.querySelector('.fixed-scroll-new-left').classList.remove('product__fixed--active')
-                                        item.querySelector('.fixed-scroll-new-left').classList.add('product__fixed--bottom')
-                                        item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
-                                        item.querySelector('.fixed-scroll-new-left').style.top = '0px'
-                                        item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
-                                    }
-                                } else {
-                                    if (window.pageYOffset >= getCoords(item.querySelector('.fixed-scroll-new-left')).top + item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height - (document.documentElement.clientHeight - Number(30)) && !item.querySelector('.fixed-scroll-new-left').classList.contains('product__fixed--active')) {
-                                        if (!((window.pageYOffset - item.offsetTop) - Number(30) >= item.getBoundingClientRect().height - document.documentElement.clientHeight)) {
-                                            coordOffsetLeftBottom = (window.pageYOffset - item.offsetTop) - item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height + window.innerHeight - 30
-                                        }
-                    
-                                        item.querySelector('.fixed-scroll-new-left').classList.add('product__fixed--active')
-                                        item.querySelector('.fixed-scroll-new-left').style.position = 'fixed'
-                                        item.querySelector('.fixed-scroll-new-left').style.top = document.documentElement.clientHeight - Number(30) + 'px'
-                                        item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, -100%, 0px)'
-                                    }
-                                    if ((window.pageYOffset - item.offsetTop) - Number(30) >= item.getBoundingClientRect().height - document.documentElement.clientHeight) {
-                                        let transformFixedBottom = item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-left').getBoundingClientRect().height
-                    
-                                        item.querySelector('.fixed-scroll-new-left').classList.remove('product__fixed--active')
-                                        item.querySelector('.fixed-scroll-new-left').classList.add('product__fixed--bottom')
-                                        item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
-                                        item.querySelector('.fixed-scroll-new-left').style.top = '0px'
-                                        item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
-                                    }
-                                }
-                            }
-
-                            if (item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height != item.getBoundingClientRect().height) {
-                                // for center
-                                if (item.querySelector('.fixed-scroll-new-center').classList.contains('product__fixed--top')) {
-                                    item.querySelector('.fixed-scroll-new-center').classList.remove('product__fixed--top')
-                                    item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
-                                    item.querySelector('.fixed-scroll-new-center').style.top = '0px'
-                                    item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, ' + coordOffsetCenterTop + 'px, 0px)'
-                                }
-                                
-                                if (item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height <= (document.documentElement.clientHeight - Number(107))) {
-                                    if (window.pageYOffset >= (getCoords(item.querySelector('.fixed-scroll-new-center')).top - Number(107))) {
-                                        item.querySelector('.fixed-scroll-new-center').classList.add('product__fixed--active')
-                                        item.querySelector('.fixed-scroll-new-center').style.position = 'fixed'
-                                        item.querySelector('.fixed-scroll-new-center').style.top = '107px'
-                                        item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, 0px, 0px)'
-                                    }
-
-                                    if (window.pageYOffset >= (item.offsetTop + (item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height) - Number(107))) {
-                                        let transformFixedBottom = item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height
-                
-                                        item.querySelector('.fixed-scroll-new-center').classList.remove('product__fixed--active')
-                                        item.querySelector('.fixed-scroll-new-center').classList.add('product__fixed--bottom')
-                                        item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
-                                        item.querySelector('.fixed-scroll-new-center').style.top = '0px'
-                                        item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
-                                    }
-                                } else {
-                                    if (window.pageYOffset >= getCoords(item.querySelector('.fixed-scroll-new-center')).top + item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height - (document.documentElement.clientHeight - Number(30)) && !item.querySelector('.fixed-scroll-new-center').classList.contains('product__fixed--active')) {
-                                        if (!((window.pageYOffset - item.offsetTop) - Number(30) >= item.getBoundingClientRect().height - document.documentElement.clientHeight)) {
-                                            coordOffsetCenterBottom = (window.pageYOffset - item.offsetTop) - item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height + window.innerHeight - 30
-                                        }
-                    
-                                        item.querySelector('.fixed-scroll-new-center').classList.add('product__fixed--active')
-                                        item.querySelector('.fixed-scroll-new-center').style.position = 'fixed'
-                                        item.querySelector('.fixed-scroll-new-center').style.top = document.documentElement.clientHeight - Number(30) + 'px'
-                                        item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, -100%, 0px)'
-                                    }
-                                    if ((window.pageYOffset - item.offsetTop) - Number(30) >= item.getBoundingClientRect().height - document.documentElement.clientHeight) {
-                                        let transformFixedBottom = item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-center').getBoundingClientRect().height
-                    
-                                        item.querySelector('.fixed-scroll-new-center').classList.remove('product__fixed--active')
-                                        item.querySelector('.fixed-scroll-new-center').classList.add('product__fixed--bottom')
-                                        item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
-                                        item.querySelector('.fixed-scroll-new-center').style.top = '0px'
-                                        item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
-                                    }
-                                }
-                            }
-                        }
-
-                        if (item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height != item.getBoundingClientRect().height) {
-                            // for right
-                            if (item.querySelector('.fixed-scroll-new-right').classList.contains('product__fixed--top')) {
-                                item.querySelector('.fixed-scroll-new-right').classList.remove('product__fixed--top')
-                                item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
-                                item.querySelector('.fixed-scroll-new-right').style.top = '0px'
-                                item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, ' + coordOffsetRightTop + 'px, 0px)'
-                            }
-
-                            if (item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height <= (document.documentElement.clientHeight - Number(107))) {
-                                if (window.pageYOffset >= (getCoords(item.querySelector('.fixed-scroll-new-right')).top - Number(107))) {
-                                    item.querySelector('.fixed-scroll-new-right').classList.add('product__fixed--active')
-                                    item.querySelector('.fixed-scroll-new-right').style.position = 'fixed'
-                                    item.querySelector('.fixed-scroll-new-right').style.top = '107px'
-                                    item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, 0px, 0px)'
-                                }
-
-                                if (window.pageYOffset >= (item.offsetTop + (item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height) - Number(107))) {
-                                    let transformFixedBottom = item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height
-            
-                                    item.querySelector('.fixed-scroll-new-right').classList.remove('product__fixed--active')
-                                    item.querySelector('.fixed-scroll-new-right').classList.add('product__fixed--bottom')
-                                    item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
-                                    item.querySelector('.fixed-scroll-new-right').style.top = '0px'
-                                    item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
-                                }
-                            } else {
-                                if (window.pageYOffset >= getCoords(item.querySelector('.fixed-scroll-new-right')).top + item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height - (document.documentElement.clientHeight - Number(30)) && !item.querySelector('.fixed-scroll-new-right').classList.contains('product__fixed--active')) {
-                                    if (!((window.pageYOffset - item.offsetTop) - Number(30) >= item.getBoundingClientRect().height - document.documentElement.clientHeight)) {
-                                        coordOffsetRightBottom = (window.pageYOffset - item.offsetTop) - item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height + window.innerHeight - 30
-                                    }
-            
-                                    item.querySelector('.fixed-scroll-new-right').classList.add('product__fixed--active')
-                                    item.querySelector('.fixed-scroll-new-right').style.position = 'fixed'
-                                    item.querySelector('.fixed-scroll-new-right').style.top = document.documentElement.clientHeight - Number(30) + 'px'
-                                    item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, -100%, 0px)'
-                                }
-
-                                if ((window.pageYOffset - item.offsetTop) - Number(30) >= item.getBoundingClientRect().height - document.documentElement.clientHeight) {
-                                    let transformFixedBottom = item.getBoundingClientRect().height - item.querySelector('.fixed-scroll-new-right').getBoundingClientRect().height
-            
-                                    item.querySelector('.fixed-scroll-new-right').classList.remove('product__fixed--active')
-                                    item.querySelector('.fixed-scroll-new-right').classList.add('product__fixed--bottom')
-                                    item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
-                                    item.querySelector('.fixed-scroll-new-right').style.top = '0px'
-                                    item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, ' + transformFixedBottom + 'px, 0px)'
-                                }
-                            }
-                        }
-                    }
-                })
+                listMenuOnScrollDown()
             }
             prevScrollpos = currentScrollPos;
         } else {
-            product.forEach(item => {
-                item.querySelector('.fixed-scroll-new-left').style.position = 'relative'
-                item.querySelector('.fixed-scroll-new-left').style.top = '0px'
-                item.querySelector('.fixed-scroll-new-left').style.transform = 'translate3d(0px, 0px, 0px)'
-
-                item.querySelector('.fixed-scroll-new-center').style.position = 'relative'
-                item.querySelector('.fixed-scroll-new-center').style.top = '0px'
-                item.querySelector('.fixed-scroll-new-center').style.transform = 'translate3d(0px, 0px, 0px)'
-
-                item.querySelector('.fixed-scroll-new-right').style.position = 'relative'
-                item.querySelector('.fixed-scroll-new-right').style.top = '0px'
-                item.querySelector('.fixed-scroll-new-right').style.transform = 'translate3d(0px, 0px, 0px)'
-            })
+            columnFixedOnScrollReset()
         }
     }
   }
   
   window.addEventListener('scroll', () => {
-    productScroll()
+    fixedColumnOnScroll()
   })
 });
 
@@ -1160,10 +1289,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // background
-    BackgroundCheck.init({
-        targets: '.bg-check',
-        images: '.page-bg-new__img'
-    });
+    if (pageBg) {
+        BackgroundCheck.init({
+            targets: '.bg-check',
+            images: '.page-bg-new__img'
+        });
+    }
     
     window.addEventListener('resize', () => {
         if (pageBg) {
